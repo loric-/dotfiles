@@ -77,11 +77,18 @@ Vagrant.configure(2) do |config|
     sudo apt-get install -y oem-audio-hda-daily-dkms
     sudo modprobe snd-hda-intel
 
+    # Fix sound
+    echo "# VirtualBox Workaround"         | sudo tee -a /etc/pulse/daemon.conf
+    echo "default-sample-rate = 48000"     | sudo tee -a /etc/pulse/daemon.conf
+    echo "alternate-sample-rate = 44100"   | sudo tee -a /etc/pulse/daemon.conf
+    echo "default-fragments = 2"           | sudo tee -a /etc/pulse/daemon.conf
+    echo "default-fragment-size-msec = 55" | sudo tee -a /etc/pulse/daemon.conf
+
     # Set autologin on i3
     echo "[SeatDefaults]"           | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf
     echo "autologin-user=vagrant"   | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf
     echo "autologin-user-timeout=0" | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf
-    echo "user-session=i3" | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf
+    echo "user-session=i3"          | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf
 
     sudo systemctl reboot
   SHELL
