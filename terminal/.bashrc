@@ -54,6 +54,7 @@ alias keyboard="setxkbmap"
 alias vgit="PAGER='vim -' git -c color.ui=false"
 alias ag="ag --hidden -S"
 alias goroot="cd $GOROOT/src"
+alias godocserver="godoc -http=:6060 -index -index_files=/tmp/goindex.db -analysis type -v"
 alias notion="chromeapp https://www.notion.so"
 
 # htop instead of top
