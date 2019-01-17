@@ -48,7 +48,7 @@ alias copy="xclip -selection clipboard"
 alias battery="acpi"
 alias lessf="less +F"
 alias vimend="vim '+normal G$'"
-alias vi="vim -u NONE"
+alias vi="vim -u $HOME/.vim/settings/bepo.vim"
 alias server="\ssh docker@lobr.fr"
 alias keyboard="setxkbmap"
 alias vgit="PAGER='vim -' git -c color.ui=false"
@@ -69,7 +69,7 @@ EDITOR=vim
 # nvim instead of vim
 if type "nvim" > /dev/null 2>&1; then
     alias vim="nvim"
-    alias vi="nvim"
+    alias vi="nvim -u $HOME/.vim/settings/bepo.vim"
     VISUAL=nvim
     EDITOR=nvim
 fi
