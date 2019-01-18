@@ -10,6 +10,7 @@ if has('nvim')
     tnoremap <Esc> <C-\><C-n>
 endif
 
+" Easily save
 noremap <C-s> :w!<CR>
 
 " Primary buffer copy paste
@@ -19,10 +20,6 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
-
-" Remap jump to/from tags
-nnoremap <C-t> <C-]>
-nnoremap g<C-t> <C-t>
 
 " Save with sudo
 command! W w !sudo tee % > /dev/null

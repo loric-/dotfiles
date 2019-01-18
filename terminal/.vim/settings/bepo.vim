@@ -45,39 +45,31 @@ function Bepo(enable)
 
     " Use w for windows manipulations
     if a:enable
-        noremap w <C-w>
-        noremap W <C-w><C-w>
+        noremap <C-w>C <C-w>H
+        noremap <C-w>T <C-W>J
+        noremap <C-w>S <C-W>K
+        noremap <C-w>R <C-w>L
 
-        noremap wc <C-w>h
-        noremap wt <C-w>j
-        noremap ws <C-w>k
-        noremap wr <C-w>l
-        noremap wo <C-w>o
+        noremap <C-w>t <C-w>j
+        noremap <C-w>s <C-w>k
+        noremap <C-w>c <C-w>h
+        noremap <C-w>r <C-w>l
 
-        noremap wC <C-w>H
-        noremap wT <C-W>J
-        noremap wS <C-W>K
-        noremap wR <C-w>L
-
-        noremap w- :split<CR>
-        noremap wb :vsplit<CR>
+        noremap <C-w>- <C-w>s
+        noremap <C-w>b <C-w>v
     else
-        unmap w
-        unmap W
+        unmap <C-w>C
+        unmap <C-w>T
+        unmap <C-w>S
+        unmap <C-w>R
 
-        unmap wt
-        unmap ws
-        unmap wc
-        unmap wr
-        unmap wo
+        unmap <C-w>t
+        unmap <C-w>s
+        unmap <C-w>c
+        unmap <C-w>r
 
-        unmap wC
-        unmap wT
-        unmap wS
-        unmap wR
-
-        unmap w-
-        unmap wb
+        unmap <C-w>-
+        unmap <C-w>b
     endif
 
     " hjkl -> ctsr
@@ -157,6 +149,16 @@ function Bepo(enable)
         unmap ««
         unmap »»
     endif
+
+    " Remap jump to/from tags
+    if a:enable
+        nnoremap <C-t> <C-]>
+        nnoremap g<C-t> <C-t>
+    else
+        nunmap <C-t>
+        nunmap g<C-t>
+    endif
+
 
     " Autocmd
     if has("autocmd")
