@@ -91,25 +91,8 @@ set updatetime=1000
 
 " Autocmd
 if has("autocmd")
-
-    " Ex file explorer
-    augroup netrw_dvorak_fix
-        autocmd!
-        autocmd filetype netrw call Fix_netrw_maps_for_dvorak()
-    augroup END
-    function! Fix_netrw_maps_for_dvorak()
-        noremap <buffer> t j
-        noremap <buffer> s k
-        noremap <buffer> k s
-    endfunction
-
-    " Auto reload file if changed on disk
-    "autocmd FocusGained,BufEnter * checktime
-    "autocmd CursorHold,CursorHoldI * checktime
-    
     " Triger `autoread` when files changes on disk
     autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
     autocmd FileChangedShellPost *
       \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
-
 endif

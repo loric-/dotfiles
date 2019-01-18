@@ -47,9 +47,37 @@ function Bepo(enable)
     if a:enable
         noremap w <C-w>
         noremap W <C-w><C-w>
+
+        noremap wt <C-w>j
+        noremap ws <C-w>k
+        noremap wc <C-w>h
+        noremap wr <C-w>l
+        noremap wo <C-w>o
+
+        noremap wC <C-w><
+        noremap wT <C-W>-
+        noremap wS <C-W>+
+        noremap wR <C-w>>
+
+        noremap w- :split<CR>
+        noremap wb :vsplit<CR>
     else
         unmap w
         unmap W
+
+        unmap wt
+        unmap ws
+        unmap wc
+        unmap wr
+        unmap wo
+
+        unmap wC
+        unmap wT
+        unmap wS
+        unmap wR
+
+        unmap w-
+        unmap wb
     endif
 
     " hjkl -> ctsr
@@ -130,6 +158,23 @@ function Bepo(enable)
         unmap »»
     endif
 
+    " Autocmd
+    if has("autocmd")
+        " Ex file explorer
+        if a:enable
+            autocmd filetype netrw call ExBepo()
+        else
+            autocmd! filetype netrw
+        endif
+    endif
+
+endfunction
+
+" Remap when in Ex file explorer
+function ExBepo()
+    noremap <buffer> t j
+    noremap <buffer> s k
+    noremap <buffer> k s
 endfunction
 
 function ToggleBepo()

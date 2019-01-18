@@ -10,13 +10,6 @@ if has('nvim')
     tnoremap <Esc> <C-\><C-n>
 endif
 
-" Save and quit shortcuts
-if has('nvim')
-    noremap <A-q> :q<CR>
-else
-    noremap q :q<CR>
-endif
-
 noremap <C-s> :w!<CR>
 
 " Primary buffer copy paste
@@ -39,51 +32,11 @@ nnoremap <leader><space> za
 vnoremap <leader><space> zf
 
 " Buffer shortcuts
-if has('nvim')
-    nnoremap <A-e> :e#<CR>
-    nnoremap <A-n> :bnext<CR>
-    nnoremap <A-p> :bprev<CR>
-    nnoremap <A-d> :bd!<CR>
-else
-    nnoremap e :e#<CR>
-    nnoremap n :bnext<CR>
-    nnoremap p :bprev<CR>
-    nnoremap d :bd!<CR>
-endif
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprev<CR>
 
 " Remove highlight (<C-/> works as well)
 nnoremap <C-_> :set hlsearch!<CR>
-
-" Remaper la gestion des fenêtres
-if has('nvim')
-    noremap <A-t> <C-w>j
-    noremap <A-s> <C-w>k
-    noremap <A-c> <C-w>h
-    noremap <A-r> <C-w>l
-    noremap <A-o> <C-w>o
-    noremap <A--> :split<CR>
-    noremap <A-b> :vsplit<CR>
-
-    noremap <A-C> <C-w><
-    noremap <A-T> <C-W>-
-    noremap <A-S> <C-W>+
-    noremap <A-R> <C-w>>
-else
-    noremap t <C-w>j
-    noremap s <C-w>k
-    noremap c <C-w>h
-    noremap r <C-w>l
-    noremap o <C-w>o
-    noremap - :split<CR>
-    noremap b :vsplit<CR>
-
-    noremap C <C-w><
-    noremap T <C-W>-
-    noremap S <C-W>+
-    noremap R <C-w>>
-endif
 
 " Autocomplete remaps
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
