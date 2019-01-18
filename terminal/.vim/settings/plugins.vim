@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'arcticicestudio/nord-vim'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
@@ -97,20 +96,6 @@ xmap » ]
 
 " Vim session
 let g:session_autosave = 'no'
-
-" Vim Tmux Navigator
-let g:tmux_navigator_no_mappings = 1
-if has('nvim')
-    nnoremap <silent> <A-c> :TmuxNavigateLeft<cr>
-    nnoremap <silent> <A-t> :TmuxNavigateDown<cr>
-    nnoremap <silent> <A-s> :TmuxNavigateUp<cr>
-    nnoremap <silent> <A-r> :TmuxNavigateRight<cr>
-else
-    nnoremap <silent> c :TmuxNavigateLeft<cr>
-    nnoremap <silent> t :TmuxNavigateDown<cr>
-    nnoremap <silent> s :TmuxNavigateUp<cr>
-    nnoremap <silent> r :TmuxNavigateRight<cr>
-endif
 
 " Vim Surround
 let g:surround_no_mappings = 1
