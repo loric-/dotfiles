@@ -48,16 +48,16 @@ function Bepo(enable)
         noremap w <C-w>
         noremap W <C-w><C-w>
 
+        noremap wc <C-w>h
         noremap wt <C-w>j
         noremap ws <C-w>k
-        noremap wc <C-w>h
         noremap wr <C-w>l
         noremap wo <C-w>o
 
-        noremap wC <C-w><
-        noremap wT <C-W>-
-        noremap wS <C-W>+
-        noremap wR <C-w>>
+        noremap wC <C-w>H
+        noremap wT <C-W>J
+        noremap wS <C-W>K
+        noremap wR <C-w>L
 
         noremap w- :split<CR>
         noremap wb :vsplit<CR>
