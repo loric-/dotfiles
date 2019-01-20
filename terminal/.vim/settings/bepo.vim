@@ -56,7 +56,7 @@ function Bepo(enable)
         noremap <C-w>r <C-w>l
 
         noremap <C-w>- <C-w>s
-        noremap <C-w>b <C-w>v
+        noremap <C-w>/ <C-w>v
     else
         unmap <C-w>C
         unmap <C-w>T

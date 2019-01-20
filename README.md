@@ -63,16 +63,16 @@ Then, restart the box. The vbguest plugin should re-install the correct version.
 
 Shortcuts tend to be consistent between apps. Here is a table listing a few of them.
 
-|                            | Home                            | Alt                            | Tmux prefix                    | Vim leader                      |
-| -------------------------- | ------------------------------- | ------------------------------ | ------------------------------ | ------------------------------- |
-| c/t/s/r                    | [i3] switch containers          | [tmux/vim] switch panes        | [tmux] switch panes            |                                 |
-| n/p                        | [i3] next/previous workspace    | [vim] next/previous buffer     |                                |                                 |
-| d                          | [dunst] close notification      | [vim] delete buffer            |                                |                                 |
-| q                          | [i3] close window               | [vim] close window             | [tmux] close pane              |                                 |
-| g                          | [i3] rofi window switcher       | [urxvt] search                 | [tmux] copy mode               | [vim] search in files           |
-| b/-                        | [i3] split orientation          | [vim] split window             | [tmux] split pane              |                                 |
-| z                          | [i3] full screen                |                                | [tmux] zoom pane               |                                 |
-|                            |                                 |                                |                                |                                 |
+|                            | Home                            | Ctrl-W                         | Ctrl-Space                     |
+| -------------------------- | ------------------------------- | ------------------------------ | ------------------------------ |
+| c/t/s/r                    | [i3] switch containers          | [vim] switch panes             | [tmux] switch panes            |
+| n/p                        | [i3] next/previous workspace    | [vim] next/previous buffer     |                                |
+| d                          | [dunst] close notification      |                                |                                |
+| q                          | [i3] close window               | [vim] close window             | [tmux] close pane              |
+| g                          | [i3] rofi window switcher       |                                | [tmux] copy mode               |
+| /-                         | [i3] split orientation          | [vim] split window             | [tmux] split pane              |
+| z                          | [i3] full screen                |                                | [tmux] zoom pane               |
+|                            |                                 |                                |                                |
 
 ## Colors
 
