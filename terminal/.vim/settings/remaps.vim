@@ -30,7 +30,9 @@ vnoremap <leader><space> zf
 
 " Buffer shortcuts
 nnoremap <Tab> :bnext<CR>
+nnoremap <C-n> :bnext<CR>
 nnoremap <S-Tab> :bprev<CR>
+nnoremap <C-p> :bprev<CR>
 
 " Remove highlight (<C-/> works as well)
 nnoremap <C-_> :set hlsearch!<CR>

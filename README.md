@@ -66,8 +66,7 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 |                            | Home                            | Ctrl-W                         | Ctrl-Space                     |
 | -------------------------- | ------------------------------- | ------------------------------ | ------------------------------ |
 | c/t/s/r                    | [i3] switch containers          | [vim] switch panes             | [tmux] switch panes            |
-| n/p                        | [i3] next/previous workspace    | [vim] next/previous buffer     |                                |
-| d                          | [dunst] close notification      |                                |                                |
+| n/p                        | [i3] next/previous workspace    | [vim] next/previous buffer     | [tmux] next/previous window    |
 | q                          | [i3] close window               | [vim] close window             | [tmux] close pane              |
 | g                          | [i3] rofi window switcher       |                                | [tmux] copy mode               |
 | /-                         | [i3] split orientation          | [vim] split window             | [tmux] split pane              |
