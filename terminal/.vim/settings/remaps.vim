@@ -4,6 +4,9 @@
 " Edit leader key
 let mapleader = "\<Space>"
 
+" Save buffer
+noremap <C-s> :w!<CR>
+
 " Remap <C-c> in visual for visual block
 vnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
