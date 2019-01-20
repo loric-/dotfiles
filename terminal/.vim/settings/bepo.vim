@@ -5,6 +5,7 @@
 let g:bepo = 0
 
 nmap <F4> :call ToggleBepo()<CR>
+nmap <F5> :call BepoStatus()<CR>
 
 function Bepo(enable)
     let g:bepo = a:enable
@@ -69,7 +70,7 @@ function Bepo(enable)
         unmap <C-w>r
 
         unmap <C-w>-
-        unmap <C-w>b
+        unmap <C-w>/
     endif
 
     " hjkl -> ctsr
@@ -186,6 +187,14 @@ function ToggleBepo()
     else
         call Bepo(0)
         echo "Bepo has been disabled"
+    endif
+endfunction
+
+function BepoStatus()
+    if g:bepo == 0 
+        echo "Bepo is disabled"
+    else
+        echo "Bepo is enabled"
     endif
 endfunction
 
