@@ -1,5 +1,8 @@
-" Custom Remaps
+" Remaps
 " ———————————————————————————————
+
+" Edit leader key
+let mapleader = "\<Space>"
 
 " Remap <C-c> in visual for visual block
 vnoremap <C-c> <Esc>
@@ -9,9 +12,6 @@ inoremap <C-c> <Esc>
 if has('nvim')
     tnoremap <Esc> <C-\><C-n>
 endif
-
-" Easily save
-noremap <C-s> :w!<CR>
 
 " Primary buffer copy paste
 vmap <Leader>y "+y
