@@ -26,6 +26,7 @@ sudo apt-get update \
       jq \
       man-db \
       mercurial \
+      ncdu \
       neovim \
       net-tools \
       netcat \
