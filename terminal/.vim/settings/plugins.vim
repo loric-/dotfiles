@@ -55,8 +55,8 @@ let g:NERDTreeMapOpenVSplit = 'k'
 let g:NERDTreeMapRefresh = 'l'
 let g:NERDTreeMapRefreshRoot = 'L'
 let g:NERDTreeMapHelp='<f1>'
-noremap <C-n> :NERDTreeToggle<CR>
-noremap g<C-n> :NERDTreeFind<CR>
+noremap <C-m> :NERDTreeToggle<CR>
+noremap g<C-m> :NERDTreeFind<CR>
 if has("autocmd")
     " Close vim if only NERDTree window opened
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
