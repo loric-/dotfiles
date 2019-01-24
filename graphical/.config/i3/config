@@ -135,21 +135,21 @@ gaps outer $gaps
 
 # Customize workspace names
 # Home
-set $workspace1 "1"
+set $workspace1 "1:T  web"
 # Dev
-set $workspace2 "2"
+set $workspace2 "2:S  code 1"
 # Chat
-set $workspace3 "3"
+set $workspace3 "3:R  code 2"
 # Temporary
-set $workspace4 "4"
+set $workspace4 "4:N  misc"
 # Others
-set $workspace5 "5"
+set $workspace5 "5:V"
 # Music
-set $workspace6 "6"
+set $workspace6 "6:D"
 # Workspace 7
-set $workspace7 "7"
+set $workspace7 "7:L"
 # Workspace 8
-set $workspace8 "8"
+set $workspace8 "8:J"
 
 # Rules to start windows in workspaces
 for_window [class="(?i)spotify"] move to workspace $workspace6
@@ -166,17 +166,17 @@ workspace_layout default
 workspace_auto_back_and_forth no
 
 # Rename workspace
-bindsym $mod+equal exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+bindsym $mod+equal exec $HOME/.config/i3/rename_workspace.sh
 
 # custom switch to workspace
-bindsym $mod+mod1+t workspace $workspace1
-bindsym $mod+mod1+s workspace $workspace2
-bindsym $mod+mod1+r workspace $workspace3
-bindsym $mod+mod1+n workspace $workspace4
-bindsym $mod+mod1+v workspace $workspace5
-bindsym $mod+mod1+d workspace $workspace6
-bindsym $mod+mod1+l workspace $workspace7
-bindsym $mod+mod1+j workspace $workspace8
+bindsym $mod+mod1+t workspace number $workspace1
+bindsym $mod+mod1+s workspace number $workspace2
+bindsym $mod+mod1+r workspace number $workspace3
+bindsym $mod+mod1+n workspace number $workspace4
+bindsym $mod+mod1+v workspace number $workspace5
+bindsym $mod+mod1+d workspace number $workspace6
+bindsym $mod+mod1+l workspace number $workspace7
+bindsym $mod+mod1+j workspace number $workspace8
 
 # switching between workspace
 bindsym $mod+p workspace prev_on_output
@@ -185,14 +185,14 @@ bindsym mod1+Shift+Tab workspace prev_on_output
 bindsym mod1+Tab workspace next_on_output
 
 # custom move focused container to workspace
-bindsym $mod+mod1+Shift+t move container to workspace $workspace1
-bindsym $mod+mod1+Shift+s move container to workspace $workspace2
-bindsym $mod+mod1+Shift+r move container to workspace $workspace3
-bindsym $mod+mod1+Shift+n move container to workspace $workspace4
-bindsym $mod+mod1+Shift+v move container to workspace $workspace5
-bindsym $mod+mod1+Shift+d move container to workspace $workspace6
-bindsym $mod+mod1+Shift+l move container to workspace $workspace7
-bindsym $mod+mod1+Shift+j move container to workspace $workspace8
+bindsym $mod+mod1+Shift+t move container to workspace number $workspace1
+bindsym $mod+mod1+Shift+s move container to workspace number $workspace2
+bindsym $mod+mod1+Shift+r move container to workspace number $workspace3
+bindsym $mod+mod1+Shift+n move container to workspace number $workspace4
+bindsym $mod+mod1+Shift+v move container to workspace number $workspace5
+bindsym $mod+mod1+Shift+d move container to workspace number $workspace6
+bindsym $mod+mod1+Shift+l move container to workspace number $workspace7
+bindsym $mod+mod1+Shift+j move container to workspace number $workspace8
 
 # move focused container to next/previous workspace
 bindsym $mod+Shift+n move container to workspace next

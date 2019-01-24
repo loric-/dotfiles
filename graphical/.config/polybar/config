@@ -82,32 +82,40 @@ pin-workspaces = true
 
 format-offset = -17
 
-ws-icon-0 = 1;T   
-ws-icon-1 = 2;S  
-ws-icon-2 = 3;R  
-ws-icon-3 = 4;N  
-ws-icon-4 = 5;V  
-ws-icon-5 = 6;D  蓼
-ws-icon-6 = 7;L  
-ws-icon-7 = 8;J  
+strip-wsnumbers = true
+fuzzy-match = true
 
-label-focused = %icon%
+ws-icon-0 = "home; " 
+ws-icon-1 = "chat; "
+ws-icon-2 = "mail; "
+ws-icon-3 = "code; "
+ws-icon-4 = "term;  "
+ws-icon-5 = "play; "
+ws-icon-6 = "file; "
+ws-icon-7 = "misc; "
+ws-icon-8 = "rest; "
+ws-icon-9 = "music;蓼 "
+ws-icon-10 = "read;龎 "
+ws-icon-11 = "tmp; "
+ws-icon-12 = "web; "
+
+label-focused = %icon%%name%
 label-focused-foreground = ${colors.base05}
 label-focused-background = ${colors.base01}
 label-focused-underline = ${colors.base0D}
 label-focused-padding = 2
 
-label-visible = %icon%
+label-visible = %icon%%name%
 label-visible-foreground = ${colors.base05}
 label-visible-background = ${colors.base01}
 label-visible-padding = 2
 
-label-unfocused = %icon%
+label-unfocused = %icon%%name%
 label-unfocused-foreground = ${colors.base03}
 label-unfocused-background = ${colors.base00}
 label-unfocused-padding = 2
 
-label-urgent = %icon%
+label-urgent = %icon%%name%
 label-urgent-foreground = ${colors.base05}
 label-urgent-background = ${colors.base08}
 label-urgent-underline = ${colors.base08}
