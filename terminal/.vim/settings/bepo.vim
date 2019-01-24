@@ -153,7 +153,7 @@ function Bepo(enable)
 
     " Remap jump to/from tags
     if a:enable
-        nnoremap <C-t> <C-]>
+        nnoremap <C-t> g<C-]>
         nnoremap g<C-t> <C-t>
     else
         nunmap <C-t>
