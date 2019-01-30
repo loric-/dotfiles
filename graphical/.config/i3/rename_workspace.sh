@@ -12,10 +12,10 @@ if [ ! -f $hist ]; then
 fi
 
 # prompt for name
-input=$( cat $hist | rofi -dmenu -p "New name")
+input=$(rofi -input $hist -dmenu -p "New workspace name" -select "clear")
 
 # rename
-if [ -z "$input" ]
+if [ -z "$input" ] || [ "$input" == "clear" ]
 then
     i3-msg "rename workspace to \"$num\""
 else
@@ -23,4 +23,4 @@ else
 fi
 
 # add to history
-echo $input >> $hist
+grep -q -x -F $input $hist || echo $input >> $hist
