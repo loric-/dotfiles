@@ -135,21 +135,21 @@ gaps outer $gaps
 
 # Customize workspace names
 # Home
-set $workspace1 "1:T  web"
+set $workspace1 "1"
 # Dev
-set $workspace2 "2:S  code 1"
+set $workspace2 "2"
 # Chat
-set $workspace3 "3:R  code 2"
+set $workspace3 "3"
 # Temporary
-set $workspace4 "4:N  misc"
+set $workspace4 "4"
 # Others
-set $workspace5 "5:V"
+set $workspace5 "7"
 # Music
-set $workspace6 "6:D"
+set $workspace6 "8"
 # Workspace 7
-set $workspace7 "7:L"
+set $workspace7 "9"
 # Workspace 8
-set $workspace8 "8:J"
+set $workspace8 "0"
 
 # Rules to start windows in workspaces
 for_window [class="(?i)spotify"] move to workspace $workspace6
