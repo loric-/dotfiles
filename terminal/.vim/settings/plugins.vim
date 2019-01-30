@@ -84,7 +84,12 @@ nmap <leader>h <Plug>(FerretAcks)
 nmap <leader>s <Plug>(FerretAckWord)
 
 " Lighline
-let g:lightline = { 'colorscheme': 'solarized' }
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
+      \ }
+      \ }
 
 " Unimpaired
 nmap « [
