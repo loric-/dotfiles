@@ -4,32 +4,6 @@
 # (__)(____/   \___)\__/ \_)__)(__)  (__)\___/
 #
 
-# I have used a look alexbooker's configuration 
-# files and youtube videos
-# See: https://www.reddit.com/r/unixporn/comments/3ow56l/i3_clean_and_minimal_i3_desktop_inspired_by_os_x/ 
-
-#
-# DEPENDENCIES
-#-----------------------------------
-
-# * i3-py | pip install i3-py && pip2 install i3-py
-# * i3-gaps | https://github.com/Airblader/i3/wiki/Compiling-&-Installing
-# * compton | apt-get install compton
-# * lxappearance | apt-get install lxappearance
-# * nitrogen | apt-get install nitrogen
-# * xflux | add-apt-repository ppa:nathan-renniewaldock/flux && apt-get update && apt-get install fluxgui
-# * greenclip | https://github.com/erebe/greenclip
-# * arandr | apt-get install arandr
-# * rofi | apt-get install rofi
-# * blueman-applet | apt-get install blueman
-# * dunst | apt-get install dunst
-# * i3lock | apt-get install i3lock scrot imagemagick xautolock
-# * xclip | apt-get install xclip
-# * playerctl | https://github.com/acrisci/playerctl/releases
-# * gsimplecal | apt-get install gsimplecal
-# * polybar | https://www.ubuntuupdates.org/ppa/getdeb_apps?dist=xenial
-# * arc-theme | http://www.noobslab.com/2017/01/arc-theme-light-dark-versions-and-arc.html
-
 #
 # SPECIAL KEY NAMES
 #-----------------------------------
@@ -54,7 +28,7 @@
 # VARIABLES
 #-----------------------------------
 
-# Modifier
+# Win as modifier
 set $mod mod4
 
 # Gaps
@@ -63,13 +37,8 @@ set $gaps 8
 # Softs
 set $terminal          urxvt -cd "`xcwd`"
 set $terminalfloating  urxvt -name floating -cd "`xcwd`"
-set $browser           google-chrome
-set $filemanager       pantheon-files
 set $screenshot        shutter --select --disable_systray
 set $settings          gnome-control-center
-set $editor            subl
-set $music             spotify
-set $skype             skypeforlinux
 
 #
 # COLORS
@@ -126,34 +95,19 @@ floating_modifier $mod
 gaps inner $gaps
 gaps outer $gaps
 
-# Use gaps if there is more than one container
-#smart_gaps on
-
 #
 # WORKSPACES
 #-----------------------------------
 
 # Customize workspace names
-# Home
 set $workspace1 "1"
-# Dev
 set $workspace2 "2"
-# Chat
 set $workspace3 "3"
-# Temporary
 set $workspace4 "4"
-# Others
 set $workspace5 "7"
-# Music
 set $workspace6 "8"
-# Workspace 7
 set $workspace7 "9"
-# Workspace 8
 set $workspace8 "0"
-
-# Rules to start windows in workspaces
-for_window [class="(?i)spotify"] move to workspace $workspace6
-assign [class="(?i)skype"] $workspace3
 
 # Rules for windows
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse
@@ -162,7 +116,7 @@ for_window [class="URxvt" instance="floating"] floating enable
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default
 
-# Allow alt-tab style when hit twice a desktop number
+# Disable alt-tab style when hit twice a desktop number
 workspace_auto_back_and_forth no
 
 # Rename workspace
@@ -315,11 +269,6 @@ bindsym Print exec --no-startup-id $screenshot
 
 # Settings
 bindsym $mod+F1 exec --no-startup-id $settings
-
-# Tags
-bindsym $mod+semicolon exec i3-input -F "mark %s" -P "New tag: "
-bindsym $mod+colon exec i3-input -F "[con_mark=\"%s\"] focus" -P "Search tag: "
-bindsym $mod+exclam exec i3-input -F "unmark %s" -P "Remove tag: "
 
 # Scratchpad
 bindsym $mod+Shift+dollar move scratchpad
