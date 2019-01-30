@@ -288,23 +288,6 @@ mode $reload_mode {
     bindsym Escape mode "default"
 }
 
-set $apps_mode "apps"
-bindsym $mod+mod1+space mode $apps_mode
-mode $apps_mode {
-    bindsym Return mode "default", exec $HOME/.config/i3/runorraise.sh $terminal
-    bindsym f mode "default", exec $HOME/.config/i3/runorraise.sh $filemanager
-    bindsym c mode "default", exec $HOME/.config/i3/runorraise.sh $browser
-    bindsym m mode "default", exec $HOME/.config/i3/runorraise.sh $music
-    bindsym i mode "default", exec $HOME/.config/i3/runorraise.sh $ide
-    bindsym e mode "default", exec $HOME/.config/i3/runorraise.sh $editor
-    bindsym s mode "default", exec $HOME/.config/i3/runorraise.sh $skype
-    bindsym d mode "default", exec gsimplecal
-    bindsym r mode "default", exec i3-input -F "exec $HOME/.config/i3/runorraise.sh %s" -P "Run or raise: "
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
 set $resize_mode "resize"
 bindsym $mod+h mode $resize_mode
 mode $resize_mode {
