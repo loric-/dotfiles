@@ -78,6 +78,12 @@ let g:fzf_action = {
   \ 'ctrl-h': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+" redefine rg command for ignore
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --no-ignore --line-number --hidden --smart-case --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0)
+
 " Ferret
 nmap g<leader>f <Plug>(FerretAck)
 nmap <leader>h <Plug>(FerretAcks)
