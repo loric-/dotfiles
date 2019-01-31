@@ -68,6 +68,7 @@ set hidden
 
 " Split on the right
 set splitright
+set splitbelow
 
 " Enable file types and indents
 filetype on
