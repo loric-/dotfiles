@@ -23,4 +23,4 @@ else
 fi
 
 # add to history
-grep -q -x -F $input $hist || echo $input >> $hist
+grep -q -x -F "$input" $hist || echo "$input" >> $hist

@@ -99,9 +99,9 @@ ws-icon-10 = "read;龎 "
 ws-icon-11 = "tmp; "
 ws-icon-12 = "web; "
 ws-icon-13 = "dev; "
-ws-icon-14 = "note: "
-ws-icon-15 = "go: "
-ws-icon-16 = "conf: "
+ws-icon-14 = "note; "
+ws-icon-15 = "go; "
+ws-icon-16 = "conf; "
 
 label-focused = %icon%%name%
 label-focused-foreground = ${colors.base05}
