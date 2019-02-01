@@ -54,8 +54,8 @@ sudo apt-get update \
 
 # Install golang
 sudo rm -rf /usr/local/go*
-sudo wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz \
-    && sudo tar -xvf go1.10.3.linux-amd64.tar.gz \
+sudo wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz \
+    && sudo tar -xvf go1.11.linux-amd64.tar.gz \
     && sudo mv go /usr/local \
     && sudo rm go*
 
