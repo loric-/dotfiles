@@ -15,12 +15,12 @@
         "<C-c>": true,
         "<C-v>": false,
         "<C-x>": false,
-        "<C-n>": false,
+        "<C-n>": false
     },
     "vim.normalModeKeyBindingsNonRecursive": 
     [
         { "before": ["é"], "after": ["w"] },
-        { "before": ["é"], "after": ["w"] },
+        { "before": ["É"], "after": ["W"] },
 
         { "before": ["è"], "after": ["^"] },
         { "before": ["È"], "after": ["0"] },
