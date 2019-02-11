@@ -352,6 +352,7 @@ function cert() { openssl s_client -showcerts -servername $1 -connect $1:443 < /
 function certexpiration() { cert $1 | openssl x509 -dates -noout; }
 function certlist() { awk -v cmd='openssl x509 -noout -subject' ' /BEGIN/{close(cmd)};{print | cmd}' < /etc/ssl/certs/ca-certificates.crt; }
 function certfile() { openssl x509 -in $1 -text -noout; }
+function certgen() { openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj "/CN=$1"; }
 
 # Strip comments
 function nocomments() {
