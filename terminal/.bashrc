@@ -352,7 +352,19 @@ function cert() { openssl s_client -showcerts -servername $1 -connect $1:443 < /
 function certexpiration() { cert $1 | openssl x509 -dates -noout; }
 function certlist() { awk -v cmd='openssl x509 -noout -subject' ' /BEGIN/{close(cmd)};{print | cmd}' < /etc/ssl/certs/ca-certificates.crt; }
 function certfile() { openssl x509 -in $1 -text -noout; }
-function certgen() { openssl req -x509 -newkey rsa:4096 -keyout "$1.key" -out "$1.crt" -days 365 -nodes -subj "/CN=$1"; }
+function certgen() {
+    openssl req \
+      -newkey rsa:4096 \
+      -days 3650 \
+      -nodes \
+      -x509 \
+      -subj "/CN=$1" \
+      -extensions SAN \
+      -config <( cat /etc/ssl/openssl.cnf \
+        <(printf "[SAN]\nsubjectAltName='DNS:$1'")) \
+      -keyout "$1.key" \
+      -out "$1.crt"
+}
 
 # Strip comments
 function nocomments() {
