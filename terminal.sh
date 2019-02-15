@@ -18,6 +18,7 @@ sudo apt-get update \
       dos2unix \
       git \
       glances \
+      graphviz \
       htop \
       httpie \
       iftop \
