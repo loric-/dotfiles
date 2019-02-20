@@ -40,7 +40,6 @@ sudo apt-get update \
       python3 \
       python3-pip \
       ranger \
-      snapd \
       ssh \
       stress \
       tcpdump \
@@ -49,6 +48,7 @@ sudo apt-get update \
       traceroute \
       tree \
       tty-clock \
+      vim \
       wget \
       wordnet \
       zsh
@@ -72,10 +72,6 @@ sudo pip3 install \
   ipython \
   neovim \
   --upgrade
-
-# Install snapd and snap packages
-sudo snap install node --classic --channel 9/stable
-sudo snap install ripgrep --classic && sudo snap alias ripgrep.rg rg
 
 # Install sshrc
 sudo rm -rf /usr/local/bin/sshrc

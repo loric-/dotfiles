@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # Install sudo
 RUN apt-get update \
@@ -31,7 +31,7 @@ RUN cd $HOME/.config/dotfiles && python3 link.py --only-terminal
 RUN lesskey
 
 # Install vim plugins
-RUN vim -c 'PlugInstall' -c 'qa!' > /dev/null
+RUN vim +'PlugInstall --sync' +qa
 
 # Save home as volume
 VOLUME $HOME
