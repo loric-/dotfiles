@@ -5,7 +5,7 @@ set -e
 sudo apt-get update \
     && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common \
     && sudo add-apt-repository -y ppa:neovim-ppa/unstable \
-    && sudo add-apt-repository ppa:git-core/ppa
+    && sudo add-apt-repository -y ppa:git-core/ppa
 
 # Install packages
 sudo apt-get update \

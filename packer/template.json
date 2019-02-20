@@ -22,7 +22,7 @@
         "iso_checksum": "{{user `iso_checksum`}}",
         "iso_checksum_type": "{{user `iso_checksum_type`}}",
         "iso_urls": [
-            "./iso/{{user `iso_name`}}",
+            "./packer/iso/{{user `iso_name`}}",
             "http://releases.ubuntu.com/bionic/{{user `iso_name`}}"
         ],
 
@@ -74,7 +74,7 @@
         "iso_checksum": "{{user `iso_checksum`}}",
         "iso_checksum_type": "{{user `iso_checksum_type`}}",
         "iso_urls": [
-            "./iso/{{user `iso_name`}}",
+            "./packer/iso/{{user `iso_name`}}",
             "http://releases.ubuntu.com/bionic/{{user `iso_name`}}"
         ],
 
@@ -130,31 +130,46 @@
     "provisioners": [
         {
             "type": "shell",
-            "script": "scripts/setup.sh",
+            "script": "packer/scripts/setup.sh",
             "execute_command": "echo 'dev' | {{.Vars}} sudo -S -E bash '{{.Path}}'"
         },
         {
             "type": "shell",
-            "script": "scripts/vmware-guest.sh",
+            "script": "packer/scripts/vmware-guest.sh",
             "only": ["vmware-iso"],
-            "execute_command": "echo 'dev' | {{.Vars}} sudo -S -E bash '{{.Path}}'"
+            "execute_command": "{{.Vars}} sudo -E bash '{{.Path}}'"
         },
         {
             "type": "shell",
-            "script": "scripts/virtualbox-guest.sh",
+            "script": "packer/scripts/virtualbox-guest.sh",
             "only": ["virtualbox-iso"],
-            "execute_command": "echo 'dev' | {{.Vars}} sudo -S -E bash '{{.Path}}'"
+            "execute_command": "{{.Vars}} sudo -E bash '{{.Path}}'"
         },
         {
             "type": "shell",
-            "script": "scripts/virtualbox-sound.sh",
+            "script": "packer/scripts/virtualbox-sound.sh",
             "only": ["virtualbox-iso"],
-            "execute_command": "echo 'dev' | {{.Vars}} sudo -S -E bash '{{.Path}}'"
+            "execute_command": "{{.Vars}} sudo -E bash '{{.Path}}'"
         },
         {
             "type": "shell",
-            "script": "scripts/cleanup.sh",
-            "execute_command": "echo 'dev' | {{.Vars}} sudo -S -E bash '{{.Path}}'"
+            "script": "terminal.sh",
+            "execute_command": "{{.Vars}} sudo -u dev -E bash '{{.Path}}'"
+        },
+        {
+            "type": "shell",
+            "script": "graphical.sh",
+            "execute_command": "{{.Vars}} sudo -u dev -E bash '{{.Path}}'"
+        },
+        {
+            "type": "shell",
+            "script": "packer/scripts/provision.sh",
+            "execute_command": "{{.Vars}} sudo -u dev -E bash '{{.Path}}'"
+        },
+        {
+            "type": "shell",
+            "script": "packer/scripts/cleanup.sh",
+            "execute_command": "{{.Vars}} sudo -E bash '{{.Path}}'"
         }
     ],
     "post-processors": [{

@@ -2,5 +2,3 @@
 *.iso
 output/
 packer-cache/
-ubuntu-desktop-18-04-virtualbox-iso*
-ubuntu-desktop-18-04-vmware-iso*

@@ -15,6 +15,7 @@ sudo apt-get install -y \
 
 # Install i3
 cd $HOME/Lab
+rm -rf i3-gaps
 
 # clone the repository
 git clone https://www.github.com/Airblader/i3 i3-gaps
