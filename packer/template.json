@@ -130,24 +130,24 @@
     "provisioners": [
         {
             "type": "shell",
-            "script": "packer/scripts/setup.sh",
+            "script": "packer/scripts/10-setup.sh",
             "execute_command": "echo 'dev' | {{.Vars}} sudo -S -E bash '{{.Path}}'"
         },
         {
             "type": "shell",
-            "script": "packer/scripts/vmware-guest.sh",
+            "script": "packer/scripts/20-vmware-guest.sh",
             "only": ["vmware-iso"],
             "execute_command": "{{.Vars}} sudo -E bash '{{.Path}}'"
         },
         {
             "type": "shell",
-            "script": "packer/scripts/virtualbox-guest.sh",
+            "script": "packer/scripts/20-virtualbox-guest.sh",
             "only": ["virtualbox-iso"],
             "execute_command": "{{.Vars}} sudo -E bash '{{.Path}}'"
         },
         {
             "type": "shell",
-            "script": "packer/scripts/virtualbox-sound.sh",
+            "script": "packer/scripts/25-virtualbox-sound.sh",
             "only": ["virtualbox-iso"],
             "execute_command": "{{.Vars}} sudo -E bash '{{.Path}}'"
         },
@@ -163,12 +163,12 @@
         },
         {
             "type": "shell",
-            "script": "packer/scripts/provision.sh",
+            "script": "packer/scripts/30-provision.sh",
             "execute_command": "{{.Vars}} sudo -u dev -E bash '{{.Path}}'"
         },
         {
             "type": "shell",
-            "script": "packer/scripts/cleanup.sh",
+            "script": "packer/scripts/40-cleanup.sh",
             "execute_command": "{{.Vars}} sudo -E bash '{{.Path}}'"
         }
     ],
