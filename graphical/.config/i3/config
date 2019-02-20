@@ -214,6 +214,9 @@ exec_always --no-startup-id $HOME/.config/i3/alternating_layouts.py
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Vmware user
+exec --no-startup-id vmware-user
+
 #
 # MODES
 #-----------------------------------

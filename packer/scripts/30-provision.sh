@@ -5,8 +5,8 @@ sudo chsh -s /bin/zsh dev
 
 # Run dotfiles
 rm -rf $HOME/.config/dotfiles
-git clone https://github.com/loric-/dotfiles.git $HOME/.config/dotfiles
-cd $HOME/.config/dotfiles && python3 link.py
+git clone https://github.com/loric-/dotfiles.git $HOME/Lab/dotfiles
+cd $HOME/Lab/dotfiles && python3 link.py
 
 # Install vim plugins
 vim +'PlugInstall --sync' +qa
