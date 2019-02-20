@@ -34,7 +34,6 @@ Plug 'xolox/vim-session'
 if has('nvim')
     Plug 'Shougo/deoplete.nvim'
     Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-    Plug 'floobits/floobits-neovim'
     Plug 'jodosha/vim-godebug'
     Plug 'zchee/deoplete-go', { 'do': 'make'}
 endif
@@ -151,7 +150,7 @@ let g:go_highlight_build_constraints = 1
 let g:nord_italic = 1
 let g:nord_underline = 1
 let g:nord_italic_comments = 1
-colorscheme nord
+silent! colorscheme nord
 " Redesign split
 set fillchars+=vert:\│
 highlight clear VertSplit
