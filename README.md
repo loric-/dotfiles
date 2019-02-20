@@ -30,34 +30,23 @@ A Dockerfile is implemented to build an environment with only terminal based app
     docker build -t lobre/dotfiles .
     docker run --rm -ti --name dotfiles -e TERM=$TERM -v $(pwd):/home/dev/Lab lobre/dotfiles
 
-## Vagrant
+## Packer
 
-A Vagrantfile at the root of the project allows the provisioning of an Ubuntu 16.04 box with all the graphical and terminal tools installed.
+Packer can be used to generate a VM of an Ubuntu 18.04 box with all the graphical and terminal tools installed.
 
-First, make sure to have the following vagrant plugins installed.
+It can build boxes both for VMware Player and Virtualbox. Here are the dependencies.
+ - packer: https://www.packer.io/downloads.html
+ - virtualbox: https://www.virtualbox.org/manual/ch02.html
+ - vmware tools: see https://github.com/lobre/docker-packer-vmware
 
-	vagrant plugin update vagrant-vbguest
-	vagrant plugin install vagrant-disksize
+You can build and provision the box as follows.
 
-And you can launch and provision the box as followed.
-
-    vagrant up
-    vagrant provision
+    packer build -only=vmware-iso packer/template.json
+    packer build -only=virtualbox-iso packer/template.json
 
 It takes around 30 min to provision the whole box.
 
 Then, the package control for sublime text has to be manually installed. `lxappearance` can help changing the gtk theme and `nitrogen` can be used for setting a wallpaper.
-
-It is also a good idea to change the VirtualBox host key to the "Applications" key. It can be handy as well to remove useless key combinations on the Virtual machine.
-
-### How to reinstall vbguest
-
-Sometimes, it happens that vbguest is updating in the VM and that leads with a difference of versions with the host. This may bring error. To re-align vbguest, use the following from inside the box.
-
-    cd /opt/VBoxGuestAdditions-<version_number>
-    sudo ./uninstall.sh
-
-Then, restart the box. The vbguest plugin should re-install the correct version.
 
 ## Shortcut reference table
 
