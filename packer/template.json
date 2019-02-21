@@ -37,6 +37,7 @@
           "memsize": "{{user `mem_size`}}",
           "numvcpus": "{{user `num_cpus`}}"
         },
+        "sound": true,
         "keep_registered": "false",
         "headless": "false",
 
