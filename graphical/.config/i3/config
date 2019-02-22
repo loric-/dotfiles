@@ -171,12 +171,12 @@ exec --no-startup-id lesskey
 # Remap keys
 exec_always --no-startup-id sleep 2 && xmodmap $HOME/.Xmodmap
 
-# Remove screensaver and never turn screen off
+# Remove screensaver and turn off screen after 5 min
 exec --no-startup-id xset -dpms
-exec --no-startup-id xset s off
+exec --no-startup-id xset s 300
 
-# Autolock after 5 min
-exec --no-startup-id xautolock -time 5 -locker "$HOME/.config/i3/i3exit lock"
+# Autolock after 20 min
+exec --no-startup-id xautolock -time 20 -locker "$HOME/.config/i3/i3exit lock"
 
 # Change mouse speed
 exec --no-startup-id xset m 5 1
