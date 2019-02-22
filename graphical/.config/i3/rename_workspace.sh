@@ -12,7 +12,7 @@ if [ ! -f $hist ]; then
 fi
 
 # prompt for name
-input=$(rofi -input $hist -dmenu -p "New workspace name: " -select "clear")
+input=$(rofi -input $hist -dmenu -p "New workspace name" -select "clear")
 
 # rename
 if [ -z "$input" ] || [ "$input" == "clear" ]
