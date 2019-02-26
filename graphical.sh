@@ -60,7 +60,8 @@ sudo apt-get install -y \
     blueman \
     xclip \
     gsimplecal \
-    pavucontrol
+    pavucontrol \
+    dconf-editor
 
 # Install xflux
 sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
