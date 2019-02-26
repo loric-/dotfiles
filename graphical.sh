@@ -161,6 +161,7 @@ sudo add-apt-repository -y ppa:elementary-os/daily
 sudo apt-get update
 sudo apt-get install -y pantheon-files
 sudo ln -sf /usr/bin/io.elementary.files /usr/bin/pantheon-files
+gsettings set io.elementary.files.preferences single-click false
 
 # Install apps
 sudo apt-get install -y \
