@@ -80,7 +80,6 @@ fi
 export VISUAL
 export EDITOR
 
-
 # Docker aliases
 alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 alias dex="docker exec -it"
@@ -139,20 +138,6 @@ function dlopen() {
 function calc() {
     bc -l <<< "$@"
 }
-
-# Try
-function try() {
-    local try_path="$LAB/try/$@"
-    mkdir -p "$try_path"
-    cd "$try_path"
-}
-
-function tryrm() {
-    local try_path="$LAB/try/$@"
-    rm -rf "$try_path"
-}
-
-alias tryclean="rm -rf $LAB/try && mkdir -p $LAB/try"
 
 # Vpn
 function vpn() {
