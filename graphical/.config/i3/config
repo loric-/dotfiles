@@ -189,7 +189,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
 # Custom programs
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id feh --randomize --bg-scale $HOME/Pictures/Wallpapers/*
 exec --no-startup-id xflux -l 46.251508
 exec --no-startup-id dunst -print \
     -lb "$base01" \
@@ -308,6 +308,9 @@ bindsym $mod+minus split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+z fullscreen
+
+# random wallpaper
+bindsym $mod+b exec --no-startup-id feh --randomize --bg-scale $HOME/Pictures/Wallpapers/*
 
 # reload monitors
 bindsym $mod+m exec --no-startup-id $HOME/.config/i3/autoxrandr.sh

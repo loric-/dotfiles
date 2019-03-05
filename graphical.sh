@@ -56,6 +56,7 @@ sudo apt-get install -y \
     compton \
     lxappearance \
     nitrogen \
+    feh \
     arandr \
     blueman \
     xclip \
