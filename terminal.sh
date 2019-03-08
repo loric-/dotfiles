@@ -48,7 +48,7 @@ sudo apt-get update \
       traceroute \
       tree \
       tty-clock \
-      vim \
+      vim-gnome \
       wget \
       wordnet \
       zsh

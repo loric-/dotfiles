@@ -190,9 +190,9 @@ function ungit () {
 # Vim server
 function vims () { 
     if [[ -z $2 ]]; then
-        vim --servername $1
+        \vim --servername $1
     else
-        vim --servername $1 --remote-silent ${@:2}
+        \vim --servername $1 --remote-silent ${@:2}
     fi
 }
 
