@@ -173,7 +173,8 @@ sudo apt-get install -y \
     filezilla \
     pinta \
     shutter \
-    gnome-control-center
+    gnome-control-center \
+    libreoffice
 
 # Install apps
 sudo snap install spotify
