@@ -56,7 +56,6 @@ alias ag="ag --hidden -S"
 alias goroot="cd $GOROOT/src"
 alias gopath="cd $GOPATH/src"
 alias godocserver="godoc -http=:6060 -index -index_files=/tmp/goindex.db -analysis type -v"
-alias notion="chromeapp https://www.notion.so"
 alias sshh="sed -rn 's/^\s*Host\s+(.*)\s*/\1/ip' ~/.ssh/config"
 alias files="pantheon-files"
 
@@ -383,6 +382,13 @@ function chromeapp() {
     fi
     google-chrome --app=$site
 }
+
+# Chrome apps aliases
+alias notion="chromeapp https://www.notion.so"
+alias feedly="chromeapp https://feedly.com"
+alias twitter="chromeapp https://tweetdeck.twitter.com"
+alias whatsapp="chromeapp https://web.whatsapp.com"
+alias messenger="chromeapp https://www.messenger.com"
 
 # Php linter
 function phplint() {
