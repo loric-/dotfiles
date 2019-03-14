@@ -93,7 +93,7 @@ set updatetime=1000
 " Autocmd
 if has("autocmd")
     " Triger `autoread` when files changes on disk
-    autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+    autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' && getcmdwintype() == '' | checktime | endif
     autocmd FileChangedShellPost *
       \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 endif
