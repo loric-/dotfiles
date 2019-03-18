@@ -366,7 +366,7 @@ function nocomments() {
 
 # Strace write
 function stracewrite() {
-    sudo strace -e trace=write -s1000 -fp $@ 2>&1 \
+    sudo strace -e trace=write -s1000 -f $@ 2>&1 \
     | grep --line-buffered -o '".\+[^"]"' \
     | grep --line-buffered -o '[^"]\+[^"]' \
     | while read -r line; do
