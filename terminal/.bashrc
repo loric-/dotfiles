@@ -1,9 +1,9 @@
 # Path
 export PATH=$PATH:$HOME/.bin/
 
-# Check if use sshrc
-if command -v sshrc >/dev/null && [ -z "$SSHHOME" ]; then
-    alias ssh="sshrc"
+# Check if use shally
+if command -v shally >/dev/null && [ -z "$SSHHOME" ]; then
+    alias ssh="shally"
 else
     # Use xterm terminal colors
     export TERM='xterm-256color'

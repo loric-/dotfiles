@@ -13,7 +13,6 @@ Shortcuts have been designed to be used with a Bépo keyboard layout. Here are t
  - sublime text
  - ranger
  - zshrc
- - sshrc
 
 Graphical and terminal application configurations are split in two different folders.
 

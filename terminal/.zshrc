@@ -15,7 +15,7 @@ alias zshr="source ~/.zshrc"
 alias history="history -E 1"
 
 # Add some autocompletions
-compdef sshrc=ssh
+compdef shally=ssh
 compdef vims=vim
 
 zstyle ':prezto:module:prompt' theme 'steeef'

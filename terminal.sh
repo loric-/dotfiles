@@ -73,11 +73,11 @@ sudo pip3 install \
   neovim \
   --upgrade
 
-# Install sshrc
-sudo rm -rf /usr/local/bin/sshrc
-sudo wget https://raw.githubusercontent.com/Russell91/sshrc/master/sshrc \
-  && sudo chmod +x sshrc \
-  && sudo mv sshrc /usr/local/bin
+# Install shally
+sudo rm -rf /usr/local/bin/shally
+sudo wget https://raw.githubusercontent.com/lobre/shally/master/shally \
+  && sudo chmod +x shally \
+  && sudo mv shally /usr/local/bin
 
 # Install Prezto
 rm -rf $HOME/.zprezto $HOME/.zlogin $HOME/.zlogout $HOME/.zpreztorc $HOME/.zprofile $HOME/.zshenv $HOME/.zshrc
