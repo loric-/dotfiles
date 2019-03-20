@@ -1,17 +1,17 @@
 # Initialize bashrc
-source $SSHHOME/.sshrc.d/.bashrc;
+source $SSHHOME/sshrc.d/.bashrc;
 
 # Initialize vim
-export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc.ssh' | source \$MYVIMRC"
+export VIMINIT="let \$MYVIMRC='$SSHHOME/sshrc.d/.vimrc.ssh' | source \$MYVIMRC"
 # Disable viminfo
 alias vim="vim -i NONE"
 alias vi="vim"
 
 # Initialize lesskey
 if type "lesskey" > /dev/null; then
-    lesskey -o $SSHHOME/.sshrc.d/.less $SSHHOME/.sshrc.d/.lesskey
-    alias less="less -k $SSHHOME/.sshrc.d/.less"
+    lesskey -o $SSHHOME/sshrc.d/.less $SSHHOME/sshrc.d/.lesskey
+    alias less="less -k $SSHHOME/sshrc.d/.less"
 fi
 
 # Define tmux alias
-alias tmux="tmux -f $SSHHOME/.sshrc.d/.tmux.conf"
+alias tmux="tmux -f $SSHHOME/sshrc.d/.tmux.conf"

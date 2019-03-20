@@ -2,7 +2,7 @@
 " ———————————————————————————————
 
 " SSH session
-set runtimepath+=$SSHHOME/.sshrc.d/.vim
+set runtimepath+=$SSHHOME/sshrc.d/.vim
 
 " General configurations
 runtime settings/general.vim
