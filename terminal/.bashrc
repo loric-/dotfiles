@@ -337,6 +337,11 @@ function cert() { openssl s_client -showcerts -servername $1 -connect $1:443 < /
 function certexpiration() { cert $1 | openssl x509 -dates -noout; }
 function certlist() { awk -v cmd='openssl x509 -noout -subject' ' /BEGIN/{close(cmd)};{print | cmd}' < /etc/ssl/certs/ca-certificates.crt; }
 function certfile() { openssl x509 -in $1 -text -noout; }
+
+# Usage
+# certgen maindomain.local
+# certgen maindomain.local DNS:othername.local
+# certgen maindomain.local DNS:othername.local,IP:127.0.0.1
 function certgen() {
     local san=""
     if [[ -n $2 ]]; then
