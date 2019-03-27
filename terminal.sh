@@ -71,6 +71,7 @@ sudo pip3 install \
   bpython \
   ipython \
   neovim \
+  asciinema \
   --upgrade
 
 # Install shally

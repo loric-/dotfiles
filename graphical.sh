@@ -164,7 +164,11 @@ sudo apt-get install -y pantheon-files
 sudo ln -sf /usr/bin/io.elementary.files /usr/bin/pantheon-files
 gsettings set io.elementary.files.preferences single-click false
 
-# Install apps
+# Custom repos for apps
+sudo add-apt-repository -y ppa:peek-developers/stable
+sudo apt-get update
+
+# Install debian apps
 sudo apt-get install -y \
     rxvt-unicode-256color \
     meld \
@@ -175,9 +179,11 @@ sudo apt-get install -y \
     shutter \
     gnome-control-center \
     libreoffice \
+    kazam \
+    peek \
     wmctrl
 
-# Install apps
+# Install snap apps
 sudo snap install spotify
 sudo snap install sublime-text --classic
 sudo snap install skype --classic
