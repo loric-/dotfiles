@@ -46,3 +46,7 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 inoremap <expr><CR> pumvisible() ? "\<C-y><Esc>" : "\<CR>"
 inoremap <expr><Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr><c-c> pumvisible() ? "\<C-e>" : "\<c-c>"
+
+" Execute bash command undercursor
+command Bash execute ".w !bash"
+nmap g<C-r> :Bash<CR>
