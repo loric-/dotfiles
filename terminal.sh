@@ -65,6 +65,7 @@ sudo pip install \
   speedtest-cli \
   neovim \
   cheat \
+  http-prompt \
   --upgrade
 
 sudo pip3 install \
