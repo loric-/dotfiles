@@ -100,14 +100,14 @@ gaps outer $gaps
 #-----------------------------------
 
 # Customize workspace names
-set $workspace1 "1"
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "7"
-set $workspace6 "8"
-set $workspace7 "9"
-set $workspace8 "0"
+set $workspace1 "1:T"
+set $workspace2 "2:S"
+set $workspace3 "3:R"
+set $workspace4 "4:N"
+set $workspace5 "7:V"
+set $workspace6 "8:D"
+set $workspace7 "9:L"
+set $workspace8 "0:J"
 
 # Rules for windows
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse
@@ -161,6 +161,9 @@ bindsym $mod+control+r move workspace to output right
 #
 # AUTOSTART
 #-----------------------------------
+
+# Rename default workspace (trick because initial names not taken from number version)
+exec --no-startup-id i3-msg workspace 2 && i3-msg "rename workspace to $workspace2" && i3-msg workspace 1 && i3-msg "rename workspace to $workspace1"
 
 # Set bépo keyboard
 exec --no-startup-id setxkbmap fr -variant bepo
