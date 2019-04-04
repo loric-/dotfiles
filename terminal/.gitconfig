@@ -42,3 +42,5 @@
     cmd = meld "$LOCAL" "$REMOTE" --label "DIFF"
 [difftool]
     prompt = false
+[include]
+    path = .gitconfig.local
