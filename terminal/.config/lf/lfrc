@@ -25,6 +25,9 @@ cmd open ${{
     esac
 }}
 
+# define a custom 'rename' command
+cmd rename %mv -i $f $1
+
 # define a custom 'delete' command
 cmd delete ${{
     set -f
