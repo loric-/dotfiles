@@ -395,6 +395,7 @@ alias twitter="chromeapp https://tweetdeck.twitter.com"
 alias whatsapp="chromeapp https://web.whatsapp.com"
 alias messenger="chromeapp https://www.messenger.com"
 alias strava="chromeapp https://strava.com"
+alias todoist="chromeapp https://todoist.com"
 
 # Php linter
 function phplint() {
