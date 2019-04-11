@@ -72,6 +72,7 @@ sudo pip3 install \
   bpython \
   ipython \
   neovim \
+  neovim-remote \
   asciinema \
   --upgrade
 

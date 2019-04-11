@@ -70,6 +70,7 @@ EDITOR=vim
 
 # nvim instead of vim
 if type "nvim" > /dev/null 2>&1; then
+    export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
     alias vim="nvim"
     VISUAL=nvim
     EDITOR=nvim
