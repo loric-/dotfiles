@@ -111,3 +111,6 @@ if [ ! -d "$HOME/Lab" ]; then
         && mkdir $HOME/Lab/go/pkg \
         && mkdir $HOME/Lab/go/src
 fi
+
+# Install golang apps
+go get -u github.com/gokcehan/lf
