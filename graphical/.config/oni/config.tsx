@@ -23,7 +23,7 @@ export const deactivate = (oni: Oni.Plugin.Api) => {
 }
 
 export const configuration = {
-    "oni.useDefaultConfig": false,
+    "oni.useDefaultConfig": true,
     "oni.loadInitVim": true,
     "editor.fontSize": "15px",
     "editor.fontFamily": "Inconsolata Nerd Font Mono",
@@ -33,4 +33,6 @@ export const configuration = {
     "ui.fontSize": "14px",
     "browser.defaultUrl": "https://www.google.com",
     "autoUpdate.enabled": true,
+    "experimental.markdownPreview.enabled": true,
+    "experimental.vcs.sidebar": true,
 }
