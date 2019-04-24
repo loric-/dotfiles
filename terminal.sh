@@ -115,3 +115,4 @@ fi
 
 # Install golang apps
 go get -u github.com/gokcehan/lf
+go get -u github.com/sourcegraph/go-langserver
