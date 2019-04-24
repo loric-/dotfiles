@@ -190,7 +190,7 @@ sudo snap install skype --classic
 sudo snap install slack --classic
 sudo snap install phpstorm --classic
 sudo snap install hugo --channel=extended
-sudo snap install vscode --classic
+sudo snap install code --classic
 sudo snap install node --classic --channel 9/stable
 sudo snap install ripgrep --classic && sudo snap alias ripgrep.rg rg
 sudo snap install hub --classic
