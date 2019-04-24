@@ -33,9 +33,6 @@ RUN lesskey
 # Install vim plugins
 RUN vim +'PlugInstall --sync' +qa
 
-# Save home as volume
-VOLUME $HOME
-
 # Set workdir
 WORKDIR $HOME/Lab
 

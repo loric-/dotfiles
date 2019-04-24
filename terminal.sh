@@ -114,5 +114,9 @@ if [ ! -d "$HOME/Lab" ]; then
 fi
 
 # Install golang apps
+export GOROOT=/usr/local/go
+export GOPATH="$HOME/Lab/go"
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 go get -u github.com/gokcehan/lf
 go get -u github.com/sourcegraph/go-langserver
