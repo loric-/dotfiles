@@ -18,7 +18,7 @@ alias history="history -E 1"
 compdef shally=ssh
 compdef vims=vim
 
-zstyle ':prezto:module:prompt' theme 'steeef'
+zstyle ':prezto:module:prompt' theme 'nicoulaj'
 
 # Enable fzf
 if [ -e ~/.fzf ]; then
