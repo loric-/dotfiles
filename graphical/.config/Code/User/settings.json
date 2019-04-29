@@ -16,8 +16,9 @@
         "<C-a>": false,
         "<C-f>": false,
         "<C-h>": false,
-        "<C-w>": false,
+        "<C-w>": true,
         "<C-c>": true,
+        "<C-b>": false,
         "<C-v>": false,
         "<C-x>": false,
         "<C-n>": false
@@ -60,5 +61,15 @@
         { "before": ["k"], "after": ["s"] }
     ],
     "extensions.ignoreRecommendations": true,
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.renderIndentGuides": false,
+    "editor.renderLineHighlight": "none",
+    "editor.overviewRulerBorder": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "explorer.openEditors.visible": 0,
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": true,
+    "window.menuBarVisibility": "toggle"
 }
