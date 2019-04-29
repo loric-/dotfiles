@@ -2,6 +2,12 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Material Theme",
     "workbench.iconTheme": "material-icon-theme",
+    "workbench.settings.useSplitJSON": true,
+    "update.showReleaseNotes": false,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "workbench.settings.editor": "json",
+    "breadcrumbs.enabled": true,
+    "telemetry.enableTelemetry": false,
     "editor.fontFamily": "Inconsolata Nerd Font Mono",
     "editor.fontSize": 16,
     "editor.lineHeight": 28,
@@ -47,7 +53,10 @@
         { "before": ["L"], "after": ["D", "a"] },
         { "before": ["H"], "after": ["R"] },
         { "before": ["J"], "after": ["T"] },
-        { "before": ["K"], "after": ["S"] }
+        { "before": ["K"], "after": ["S"] },
+
+        // For surround plugin
+        { "before": ["h", "s"], "after": ["c", "s"] },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         { "before": ["c"], "after": ["h"] },
@@ -68,6 +77,7 @@
     "editor.renderLineHighlight": "none",
     "editor.overviewRulerBorder": false,
     "editor.hideCursorInOverviewRuler": true,
+    "vim.sneak": true,
     "explorer.openEditors.visible": 0,
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
