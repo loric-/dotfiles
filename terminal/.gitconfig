@@ -26,20 +26,25 @@
 	excludesfile = ~/.gitignore
 [color]
 	ui = true
+    editor = code --wait
 [credential]
 	helper = store
 [merge]
-    tool = meld
+    tool = vscode
 [mergetool "meld"]
     cmd = meld --auto-merge "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED" --label "MERGE"
     trustExitCode = false
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
 [mergetool]
     prompt = false
     keepBackup = false
 [diff]
-    tool = meld
+    tool = vscode
 [difftool "meld"]
     cmd = meld "$LOCAL" "$REMOTE" --label "DIFF"
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 [difftool]
     prompt = false
 [include]

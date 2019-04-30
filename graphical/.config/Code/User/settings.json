@@ -1,36 +1,38 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Material Theme",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.settings.useSplitJSON": true,
-    "update.showReleaseNotes": false,
-    "extensions.showRecommendationsOnlyOnDemand": true,
-    "workbench.settings.editor": "json",
-    "breadcrumbs.enabled": true,
-    "telemetry.enableTelemetry": false,
     "editor.fontFamily": "Inconsolata Nerd Font Mono",
     "editor.fontSize": 16,
+    "editor.hideCursorInOverviewRuler": true,
     "editor.lineHeight": 28,
-    "terminal.integrated.shell.linux": "/bin/zsh",
+    "editor.minimap.enabled": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderIndentGuides": false,
+    "editor.renderLineHighlight": "none",
+    "editor.renderWhitespace": "none",
+    "explorer.openEditors.visible": 0,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "telemetry.enableTelemetry": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen"
+    ],
     "terminal.integrated.fontFamily": "Inconsolata Nerd Font Mono, Symbola monospacified for Inconsolata",
     "terminal.integrated.fontSize": 16,
-    "terminal.integrated.lineHeight": 1,
     "terminal.integrated.letterSpacing": 1,
-    "vim.startInInsertMode": true,
-    "vim.useSystemClipboard": true,
-    "vim.handleKeys":{
+    "terminal.integrated.lineHeight": 1,
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "update.showReleaseNotes": false,
+    "vim.handleKeys": {
         "<C-a>": false,
+        "<C-b>": false,
+        "<C-c>": true,
         "<C-f>": false,
         "<C-h>": false,
-        "<C-w>": true,
-        "<C-c>": true,
-        "<C-b>": false,
+        "<C-n>": false,
         "<C-v>": false,
-        "<C-x>": false,
-        "<C-n>": false
+        "<C-w>": true,
+        "<C-x>": false
     },
-    "vim.normalModeKeyBindingsNonRecursive": 
-    [
+    "vim.normalModeKeyBindingsNonRecursive": [
         { "before": ["é"], "after": ["w"] },
         { "before": ["É"], "after": ["W"] },
 
@@ -58,6 +60,9 @@
         // For surround plugin
         { "before": ["h", "s"], "after": ["c", "s"] },
     ],
+    "vim.sneak": true,
+    "vim.startInInsertMode": true,
+    "vim.useSystemClipboard": true,
     "vim.visualModeKeyBindingsNonRecursive": [
         { "before": ["c"], "after": ["h"] },
         { "before": ["r"], "after": ["l"] },
@@ -69,20 +74,13 @@
         { "before": ["j"], "after": ["t"] },
         { "before": ["k"], "after": ["s"] }
     ],
-    "extensions.ignoreRecommendations": true,
-    "window.zoomLevel": 0,
-    "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "none",
-    "editor.renderIndentGuides": false,
-    "editor.renderLineHighlight": "none",
-    "editor.overviewRulerBorder": false,
-    "editor.hideCursorInOverviewRuler": true,
-    "vim.sneak": true,
-    "explorer.openEditors.visible": 0,
-    "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "toggle",
-    "terminal.integrated.commandsToSkipShell": [
-        "-workbench.action.quickOpen"
-    ],
+    "window.zoomLevel": 0,
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Material Theme",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.settings.editor": "json",
+    "workbench.settings.useSplitJSON": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.statusBar.visible": true
 }
