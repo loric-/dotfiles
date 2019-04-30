@@ -81,5 +81,8 @@
     "explorer.openEditors.visible": 0,
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
-    "window.menuBarVisibility": "toggle"
+    "window.menuBarVisibility": "toggle",
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen"
+    ],
 }
