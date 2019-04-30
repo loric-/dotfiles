@@ -25,7 +25,7 @@
     { "key": "alt+shift+c", "command": "workbench.action.moveEditorToLeftGroup" },
     { "key": "alt+shift+r", "command": "workbench.action.moveEditorToRightGroup" },
     { "key": "ctrl+b", "command": "workbench.action.toggleSidebarVisibility" },
-    { "key": "ctrl+e", "command": "workbench.files.action.focusFilesExplorer" },
+    { "key": "ctrl+shift+e", "command": "workbench.files.action.focusFilesExplorer" },
     { "key": "ctrl+tab", "command": "workbench.action.nextSideBarView", "when": "sideBarFocus" },
     { "key": "ctrl+shift+tab", "command": "workbench.action.previousSideBarView", "when": "sideBarFocus" },
     { "key": "ctrl+tab", "command": "workbench.action.nextPanelView", "when": "panelFocus" },
