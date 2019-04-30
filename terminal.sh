@@ -120,4 +120,4 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 go get -u github.com/gokcehan/lf
 go get -u github.com/sourcegraph/go-langserver
-go get github.com/wagoodman/dive
+#go get -u github.com/wagoodman/dive
