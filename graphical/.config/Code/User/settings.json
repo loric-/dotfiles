@@ -83,5 +83,6 @@
     "workbench.settings.editor": "json",
     "workbench.settings.useSplitJSON": true,
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.statusBar.visible": true
+    "workbench.statusBar.visible": true,
+    "terminal.integrated.rendererType": "dom"
 }
