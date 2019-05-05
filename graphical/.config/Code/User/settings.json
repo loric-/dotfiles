@@ -1,6 +1,6 @@
 {
     "editor.folding": false,
-    "editor.fontFamily": "Inconsolata Nerd Font Mono",
+    "editor.fontFamily": "'Inconsolata Nerd Font Mono','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 16,
     "editor.hideCursorInOverviewRuler": true,
     "editor.lineHeight": 28,
@@ -16,7 +16,7 @@
     "terminal.integrated.commandsToSkipShell": [
         "-workbench.action.quickOpen"
     ],
-    "terminal.integrated.fontFamily": "Inconsolata Nerd Font Mono, Symbola monospacified for Inconsolata",
+    "terminal.integrated.fontFamily": "'Inconsolata Nerd Font Mono', 'Symbola monospacified for Inconsolata','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.letterSpacing": 1,
     "terminal.integrated.lineHeight": 1,
