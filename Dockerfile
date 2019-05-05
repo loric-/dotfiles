@@ -33,6 +33,9 @@ RUN curl -L -o /tmp/docker-compose https://github.com/docker/compose/releases/do
     && chmod +x /tmp/docker-compose \
     && sudo mv /tmp/docker-compose /usr/local/bin
 
+# Add user to docker group
+RUN sudo groupadd docker && sudo usermod -aG docker dev
+
 # Set zsh as default
 ENV SHELL=/bin/zsh
 
