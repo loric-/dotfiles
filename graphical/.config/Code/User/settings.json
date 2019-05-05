@@ -58,8 +58,7 @@
         { "before": ["J"], "after": ["T"] },
         { "before": ["K"], "after": ["S"] },
 
-        // For surround plugin
-        { "before": ["h", "s"], "after": ["c", "s"] },
+        { "before": ["h", "s"], "after": ["c", "s"] }
     ],
     "vim.sneak": true,
     "vim.startInInsertMode": true,
