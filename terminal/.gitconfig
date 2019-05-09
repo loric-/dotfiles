@@ -30,7 +30,7 @@
 [credential]
 	helper = store
 [merge]
-    tool = vscode
+    tool = meld
 [mergetool "meld"]
     cmd = meld --auto-merge "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED" --label "MERGE"
     trustExitCode = false
@@ -40,7 +40,7 @@
     prompt = false
     keepBackup = false
 [diff]
-    tool = vscode
+    tool = meld
 [difftool "meld"]
     cmd = meld "$LOCAL" "$REMOTE" --label "DIFF"
 [difftool "vscode"]
