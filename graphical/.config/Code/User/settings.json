@@ -76,7 +76,7 @@
     ],
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 0,
-    "workbench.activityBar.visible": false,
+    "workbench.activityBar.visible": true,
     "workbench.colorTheme": "Material Theme",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.settings.editor": "json",

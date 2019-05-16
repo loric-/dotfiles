@@ -1,7 +1,8 @@
 // Place your key bindings in this file to overwrite the defaults
 [
     { "key": "ctrl+w", "command": "workbench.action.closeActiveEditor" },
-    { "key": "ctrl+t", "command": "workbench.action.files.newUntitledFile", "when": "editorTextFocus" },
+    { "key": "ctrl+t", "command": "editor.action.revealDefinition", "when": "editorTextFocus" },
+    { "key": "g ctrl+t", "command": "workbench.action.navigateBack" },
     { "key": "ctrl+tab", "command": "workbench.action.nextEditor" },
     { "key": "ctrl+shift+tab", "command": "workbench.action.previousEditor" },
     { "key": "ctrl+t", "command": "list.focusDown", "when": "listFocus" },
