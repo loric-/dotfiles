@@ -18,6 +18,9 @@ set path=$PWD/**
 " Explorer shown as tree
 let g:netrw_liststyle=3
 
+" Explorer delete command
+let g:netrw_localrmdir='rm -r'
+
 " Customize grep program
 set grepprg=grep\ -RIin\ --exclude=tags\ $*\ 2>/dev/null
 
