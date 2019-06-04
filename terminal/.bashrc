@@ -274,7 +274,7 @@ function printFlask() {
 function lab() {
     if [ -n "$1" ]; then
         cd $LAB
-        dir=$(find -L . -maxdepth 2 -type d -wholename "*$1*" -print -quit)
+        dir=$(find -L . -maxdepth 2 -type d -wholename "*$1*" -print | sort | head -n1)
         if [ -n "$dir" ]; then
             cd $dir
             printFlask $(basename $dir) && ls
