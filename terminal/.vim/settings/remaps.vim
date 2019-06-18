@@ -33,9 +33,9 @@ vnoremap <leader><space> zf
 
 " Buffer shortcuts
 nnoremap <Tab> :bnext<CR>
-nnoremap <C-n> :bnext<CR>
 nnoremap <S-Tab> :bprev<CR>
-nnoremap <C-p> :bprev<CR>
+nnoremap <C-n> :bnext<CR>:redraw<CR>:ls<CR>
+nnoremap <C-p> :bprevious<CR>:redraw<CR>:ls<CR>
 
 " Remove highlight (<C-/> works as well)
 nnoremap <C-_> :set hlsearch!<CR>
@@ -50,3 +50,6 @@ inoremap <expr><c-c> pumvisible() ? "\<C-e>" : "\<c-c>"
 " Execute bash command undercursor
 command Bash execute ".w !bash"
 nmap g<C-r> :Bash<CR>
+
+" Regenerate ctags
+nnoremap <F2> :!ctags -R<CR>
