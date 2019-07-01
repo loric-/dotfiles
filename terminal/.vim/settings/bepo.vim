@@ -1,30 +1,17 @@
-" Bepo related configurations
-" ———————————————————————————————
-
 " Variable to hold the enable status
 let g:bepo = 0
-
-nmap <F4> :call ToggleBepo()<CR>
-nmap <F5> :call BepoStatus()<CR>
 
 function Bepo(enable)
     let g:bepo = a:enable
 
-    " Use é and è
     if a:enable
+        " Use é and è
         noremap é w
         noremap É W
         noremap è ^
         noremap È 0
-    else
-        unmap é
-        unmap É
-        unmap è
-        unmap È
-    endif
-
-    " Remap text objects with é
-    if a:enable
+        
+        " Remap text objects with é
         onoremap aé aw
         onoremap aÉ aW
         onoremap ié iw
@@ -33,19 +20,8 @@ function Bepo(enable)
         vnoremap aÉ aW
         vnoremap ié iw
         vnoremap iÉ iW
-    else
-        ounmap aé
-        ounmap aÉ
-        ounmap ié
-        ounmap iÉ
-        vunmap aé
-        vunmap aÉ
-        vunmap ié
-        vunmap iÉ
-    endif
 
-    " Use w for windows manipulations
-    if a:enable
+        " Use w for windows manipulations
         noremap <C-w>C <C-w>H
         noremap <C-w>T <C-W>J
         noremap <C-w>S <C-W>K
@@ -58,7 +34,67 @@ function Bepo(enable)
 
         noremap <C-w>- <C-w>s
         noremap <C-w>/ <C-w>v
+
+        " hjkl -> ctsr
+        noremap c h
+        noremap r l
+        noremap t j
+        noremap s k
+        noremap C H
+        noremap R L
+        noremap T J
+        noremap S K
+        noremap zs zk
+        noremap zt zj
+
+        " hjkl <- ctsr
+        noremap j t
+        noremap J T
+        noremap l c
+        noremap L C
+        noremap h r
+        noremap H R
+        noremap k s
+        noremap K S
+        noremap ]k ]s
+        noremap [k [s
+
+        " Remap g keymaps
+        noremap gs gk
+        noremap gt gj
+        noremap gb gT
+        noremap gé gt
+        noremap gB :exe "silent! tabfirst"<CR>
+        noremap gÉ :exe "silent! tablast"<CR>
+        noremap g" g0
+
+        " Move around in code
+        nmap «« [[
+        nmap »» ]]
+
+        " Remap jump to/from tags
+        nnoremap <C-t> g<C-]>
+        nnoremap g<C-t> <C-t>
+
+        if has("autocmd")
+            " Ex file explorer
+            autocmd filetype netrw call ExBepo()
+        endif
     else
+        unmap é
+        unmap É
+        unmap è
+        unmap È
+
+        ounmap aé
+        ounmap aÉ
+        ounmap ié
+        ounmap iÉ
+        vunmap aé
+        vunmap aÉ
+        vunmap ié
+        vunmap iÉ
+
         unmap <C-w>C
         unmap <C-w>T
         unmap <C-w>S
@@ -71,21 +107,7 @@ function Bepo(enable)
 
         unmap <C-w>-
         unmap <C-w>/
-    endif
 
-    " hjkl -> ctsr
-    if a:enable
-        noremap c h
-        noremap r l
-        noremap t j
-        noremap s k
-        noremap C H
-        noremap R L
-        noremap T J
-        noremap S K
-        noremap zs zk
-        noremap zt zj
-    else
         unmap c
         unmap r
         unmap t
@@ -96,21 +118,7 @@ function Bepo(enable)
         unmap S
         unmap zs
         unmap zt
-    endif
 
-    " hjkl <- ctsr
-    if a:enable
-        noremap j t
-        noremap J T
-        noremap l c
-        noremap L C
-        noremap h r
-        noremap H R
-        noremap k s
-        noremap K S
-        noremap ]k ]s
-        noremap [k [s
-    else
         unmap j
         unmap J
         unmap l
@@ -121,18 +129,7 @@ function Bepo(enable)
         unmap K
         unmap ]k
         unmap [k
-    endif
 
-    " Remap g keymaps
-    if a:enable
-        noremap gs gk
-        noremap gt gj
-        noremap gb gT
-        noremap gé gt
-        noremap gB :exe "silent! tabfirst"<CR>
-        noremap gÉ :exe "silent! tablast"<CR>
-        noremap g" g0
-    else
         unmap gs
         unmap gt
         unmap gb
@@ -140,37 +137,17 @@ function Bepo(enable)
         unmap gB
         unmap gÉ
         unmap g"
-    endif
 
-    " Move around in code
-    if a:enable
-        nmap «« [[
-        nmap »» ]]
-    else
         unmap ««
         unmap »»
-    endif
 
-    " Remap jump to/from tags
-    if a:enable
-        nnoremap <C-t> g<C-]>
-        nnoremap g<C-t> <C-t>
-    else
         nunmap <C-t>
         nunmap g<C-t>
-    endif
 
-
-    " Autocmd
-    if has("autocmd")
-        " Ex file explorer
-        if a:enable
-            autocmd filetype netrw call ExBepo()
-        else
+        if has("autocmd")
             autocmd! filetype netrw
         endif
     endif
-
 endfunction
 
 " Remap when in Ex file explorer
