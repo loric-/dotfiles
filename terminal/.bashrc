@@ -47,8 +47,6 @@ alias rsync="rsync -avz --progress"
 alias copy="xclip -selection clipboard"
 alias battery="acpi"
 alias lessf="less +F"
-alias vimend="vim '+normal G$'"
-alias vi="\vim -u $HOME/.vimrc.basic"
 alias server="\ssh docker@lobr.fr"
 alias keyboard="setxkbmap"
 alias vgit="PAGER='vim -' git -c color.ui=false"
@@ -68,14 +66,6 @@ fi
 # Default editor
 VISUAL=vim
 EDITOR=vim
-
-# nvim instead of vim
-if type "nvim" > /dev/null 2>&1; then
-    export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-    alias vim="nvim"
-    VISUAL=nvim
-    EDITOR=nvim
-fi
 
 # Export default editor
 export VISUAL
@@ -186,15 +176,6 @@ function ungit () {
         repo=$1
     fi
     docker run --name ungit -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent -v $HOME/.ssh/known_hosts:/home/developer/.ssh/known_hosts -v $HOME/.gitconfig:/home/developer/.gitconfig -p 8448:8448 -d -v $repo:/repo mybuilds/ungit
-}
-
-# Vim server
-function vims () { 
-    if [[ -z $2 ]]; then
-        \vim --servername $1
-    else
-        \vim --servername $1 --remote-silent ${@:2}
-    fi
 }
 
 # Browser query

@@ -3,8 +3,8 @@ select_incoming: r
 toggle_view: v
 show_up: S
 show_down: T 
-scroll_up: s
-scroll_down: t
+scroll_up: t
+scroll_down: s
 edit: e
 next: n
 previous: p

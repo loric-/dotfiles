@@ -4,7 +4,7 @@ set -e
 # Install ppa
 sudo apt-get update \
     && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common \
-    && sudo add-apt-repository -y ppa:neovim-ppa/unstable \
+    && sudo add-apt-repository -y ppa:jonathonf/vim \
     && sudo add-apt-repository -y ppa:git-core/ppa
 
 # Install packages
@@ -29,7 +29,6 @@ sudo apt-get update \
       mercurial \
       moreutils \
       ncdu \
-      neovim \
       net-tools \
       netcat \
       nethogs \
@@ -49,22 +48,21 @@ sudo apt-get update \
       traceroute \
       tree \
       tty-clock \
-      vim-gnome \
+      vim \
       wget \
       wordnet \
       zsh
 
 # Install golang
 sudo rm -rf /usr/local/go*
-sudo wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz \
-    && sudo tar -xvf go1.11.linux-amd64.tar.gz \
+sudo wget https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz \
+    && sudo tar -xvf go1.12.6.linux-amd64.tar.gz \
     && sudo mv go /usr/local \
     && sudo rm go*
 
 # Install python packages
 sudo pip install \
   speedtest-cli \
-  neovim \
   cheat \
   http-prompt \
   --upgrade
@@ -72,8 +70,6 @@ sudo pip install \
 sudo pip3 install \
   bpython \
   ipython \
-  neovim \
-  neovim-remote \
   asciinema \
   --upgrade
 
@@ -98,10 +94,8 @@ rm -rf $HOME/.fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf \
   && $HOME/.fzf/install --bin
 
-# Install vim plug
-rm -rf $HOME/.vim/autoload/plug.vim
-curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Install vim-go
+git clone https://github.com/fatih/vim-go.git $HOME/.vim/pack/plugins/start/vim-go
 
 # Working dir
 if [ ! -d "$HOME/Lab" ]; then

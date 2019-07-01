@@ -48,7 +48,7 @@ RUN cd $HOME/.config/dotfiles && python3 link.py --only-terminal
 RUN lesskey
 
 # Install vim plugins
-RUN vim +'PlugInstall --sync' +qa
+RUN vim +'GoUpdateBinaries' +qa
 
 # Set workdir
 WORKDIR $HOME/Lab

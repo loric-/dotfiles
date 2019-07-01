@@ -2,7 +2,8 @@
 source $SSHHOME/sshrc.d/.bashrc;
 
 # Initialize vim
-export VIMINIT="let \$MYVIMRC='$SSHHOME/sshrc.d/.vimrc.ssh' | source \$MYVIMRC"
+export VIMINIT="let \$MYVIMRC='$SSHHOME/sshrc.d/.vimrc' | set runtimepath+=$SSHHOME/sshrc.d/.vim | source \$MYVIMRC"
+
 # Disable viminfo
 alias vim="vim -i NONE"
 alias vi="vim"
