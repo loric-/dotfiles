@@ -15,6 +15,9 @@ set backupdir=/tmp
 
 set scrolloff=3    " 3 lines displayed around cursor for scroll
 
+" No delay when exiting visual mode
+set timeoutlen=1000 ttimeoutlen=0
+
 set ignorecase     " Case insensitive
 set wildignorecase " Autocomplete case insensitive
 set smartcase      " Enable case sensitivity if search contains upper letter
