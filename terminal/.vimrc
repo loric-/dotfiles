@@ -21,6 +21,7 @@ set smartcase      " Enable case sensitivity if search contains upper letter
 set incsearch      " Highlight search result while inputing
 set hlsearch       " Highlight search results
 set wildmenu       " Show possible completions on command line
+set hidden         " Enable caching on buffer switch
 
 set background=dark
 
