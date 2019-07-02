@@ -22,7 +22,7 @@
     # git find-merge <SHA-1>
     # git find-merge <SHA-1> master
 [core]
-	editor = nvim
+	editor = vim
 	excludesfile = ~/.gitignore
 [color]
 	ui = true
