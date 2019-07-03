@@ -118,3 +118,4 @@ go get -u github.com/sourcegraph/go-langserver
 go get -u github.com/jesseduffield/lazygit
 go get -u github.com/mkchoi212/fac
 #go get -u github.com/wagoodman/dive
+go get -u github.com/jesseduffield/lazydocker
