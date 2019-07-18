@@ -29,6 +29,14 @@ A Dockerfile is implemented to build an environment with only terminal based app
     docker build -t lobre/dotfiles .
     docker run --rm -ti --name dotfiles -e TERM=$TERM -v $(pwd):/home/dev/Lab lobre/dotfiles
 
+## Generate ISO
+
+    docker run -it --rm --privileged -v $(pwd):/root/workdir lobre/isobuilder \
+        -p "iso/ks.preseed" \
+        -p "iso/isolinux/txt.cfg:isolinux/txt.cfg" \
+        -p "iso/scripts" -- \
+        ubuntu-18.04.2-desktop-amd64.iso
+
 ## Packer
 
 Packer can be used to generate a VM of an Ubuntu 18.04 box with all the graphical and terminal tools installed.
