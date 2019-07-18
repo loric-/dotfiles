@@ -11,6 +11,7 @@ iso:
         -p "iso/isolinux/txt.cfg:isolinux/txt.cfg" \
         -p "iso/scripts" -- \
         $(ISO)
+	sudo chown 1000.1000 output.iso
 
 .PHONY: docker
 docker:
