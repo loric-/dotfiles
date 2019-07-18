@@ -8,7 +8,7 @@ d-i console-setup/layoutcode string fr
 d-i keyboard-configuration/variantcode string bepo
 
 # Network
-#d-i netcfg/get_hostname string dev
+d-i netcfg/get_hostname string dev
 d-i netcfg/choose_interface select auto
 
 # Clock
@@ -22,7 +22,6 @@ d-i passwd/user-fullname string dev
 d-i passwd/username string dev
 d-i passwd/user-password-crypted password ishK.QSdqQwK.
 d-i passwd/root-login boolean false
-d-i passwd/user-uid string 1000
 d-i user-setup/allow-password-weak boolean true
 
 # Grub
@@ -32,4 +31,5 @@ d-i finish-install/reboot_in_progress note
 
 # Custom Commands
 ubiquity ubiquity/success_command string \
-  cp -a /cdrom/scripts/ /target/root/
+  cp -a /cdrom/scripts/ /target/home/dev/isoscripts; \
+  chroot /target chown dev.dev /home/dev/isoscripts;
