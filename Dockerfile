@@ -1,54 +1,28 @@
 FROM ubuntu:18.04
 
-# Install sudo
-RUN apt-get update \
-  && apt-get install -y sudo \
-  && echo "%sudo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+# Add install scripts
+COPY provision/term_root.sh /tmp/term_root.sh
+COPY provision/term_user.sh /tmp/term_user.sh
+COPY provision/create_user.sh /tmp/create_user.sh
+RUN chmod +x /tmp/term_root.sh /tmp/term_user.sh /tmp/create_user.sh
 
-# Create user
-ENV HOME /home/dev
-RUN useradd --create-home --home-dir $HOME dev \
-  && chown -R dev:dev $HOME
-RUN echo "dev:dev" | chpasswd
-RUN usermod -aG sudo dev
+# Install apps
+RUN /tmp/term_root.sh
+
+# Create dev user
+RUN /tmp/create_user.sh dev
+
+# Add user to docker group
+RUN usermod -aG docker dev
 
 # Define current user
 USER dev
 
-# Add and run install script
-COPY --chown=dev:dev terminal.sh /tmp/terminal.sh
-RUN chmod +x /tmp/terminal.sh && ./tmp/terminal.sh && rm /tmp/terminal.sh
-
-# Install docker client
-ENV DOCKER_VERSION "18.09.5"
-RUN curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz \
-    && tar -xz -C /tmp -f /tmp/docker-$DOCKER_VERSION.tgz \
-    && chmod +x /tmp/docker/docker \
-    && sudo mv /tmp/docker/docker /usr/local/bin \
-    && rm -rf /tmp/docker-$DOCKER_VERSION /tmp/docker
-
-# Install docker-compose client
-ENV DOCKER_COMPOSE_VERSION "1.22.0"
-RUN curl -L -o /tmp/docker-compose https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m) \
-    && chmod +x /tmp/docker-compose \
-    && sudo mv /tmp/docker-compose /usr/local/bin
-
-# Add user to docker group
-RUN sudo groupadd -g 999 docker && sudo usermod -aG docker dev
+# Run user script
+RUN /tmp/term_user.sh
 
 # Set zsh as default
 ENV SHELL=/bin/zsh
-
-# Run dotfiles
-RUN mkdir $HOME/.config \
-  && git clone https://github.com/loric-/dotfiles.git $HOME/.config/dotfiles
-RUN cd $HOME/.config/dotfiles && python3 link.py --only-terminal
-
-# Apply less layout
-RUN lesskey
-
-# Install vim plugins
-RUN vim +'GoUpdateBinaries' +qa
 
 # Set workdir
 WORKDIR $HOME/Lab

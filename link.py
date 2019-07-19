@@ -50,8 +50,8 @@ def linkFile(path, link):
 
 
 HOME = os.environ['HOME']
-GUI = 'graphical'
-CUI = 'terminal'
+GUI = 'gui'
+CUI = 'term'
 
 echo('Linking terminal config')
 linkAllFiles(CUI, HOME)
