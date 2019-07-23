@@ -12,8 +12,8 @@ iso:
         -p "iso/scripts" \
         -s "provision/term_root.sh" \
         -s "provision/gui_root.sh" \
-		-f "provision/snap.yaml:/var/lib/snapd/seed/seed.yaml" \
-		-s "provision/preseed_snap.sh" \
+        -f "provision/snap.yaml:/var/lib/snapd/seed/seed.yaml" \
+        -s "provision/preseed_snap.sh" \
         -- $(ISO)
 	@[ -f output.iso ] && sudo chown 1000.1000 output.iso
 
