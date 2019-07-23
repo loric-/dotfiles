@@ -19,3 +19,6 @@ iso:
 docker:
 	docker build -t lobre/dotfiles .
 
+.PHONY: link
+link:
+	python3 link.py
