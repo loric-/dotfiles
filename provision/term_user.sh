@@ -47,9 +47,10 @@ go get -u github.com/mkchoi212/fac
 go get -u github.com/jesseduffield/lazydocker
 
 # Install dotfiles
-mkdir $HOME/.config
-git clone https://github.com/loric-/dotfiles.git $HOME/.config/dotfiles
-cd $HOME/.config/dotfiles && python3 link.py --only-terminal
+if [ ! -d "$HOME/Lab/dotfiles" ]; then
+    git clone https://github.com/loric-/dotfiles.git $HOME/Lab/dotfiles
+fi
+(cd $HOME/Lab/dotfiles && python3 link.py --only-terminal)
 
 # Apply less layout
 lesskey
