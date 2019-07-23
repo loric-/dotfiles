@@ -68,7 +68,7 @@ rm -rf /usr/local/go*
 wget https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz \
     && tar -xvf go1.12.6.linux-amd64.tar.gz \
     && mv go /usr/local \
-    && rm go*
+    && rm -f go*
 
 # Install python packages
 pip install \
@@ -104,5 +104,5 @@ chmod +x /usr/local/bin/docker-compose
 
 # Delete apt cache
 apt-get clean
-rm -r /var/crash/*
-rm -r /var/cache/*
+rm -rf /var/crash/*
+rm -rf /var/cache/*

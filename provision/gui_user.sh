@@ -1,6 +1,6 @@
 #/bin/sh
 #
-# should be run as user
+# should be run as user (with sudo capabilities)
 
 set -e
 

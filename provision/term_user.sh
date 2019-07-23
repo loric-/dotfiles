@@ -1,6 +1,9 @@
 #!/bin/bash
 #
-# should be run as user
+# should be run as user (with sudo capabilities)
+
+# Add current user to docker group
+sudo usermod -aG docker $USER
 
 # Install Prezto
 rm -rf $HOME/.zprezto $HOME/.zlogin $HOME/.zlogout $HOME/.zpreztorc $HOME/.zprofile $HOME/.zshenv $HOME/.zshrc

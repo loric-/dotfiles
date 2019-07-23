@@ -61,7 +61,6 @@ apt-get install -y \
     nitrogen \
     feh \
     arandr \
-    blueman \
     xclip \
     gsimplecal \
     pavucontrol \
@@ -150,33 +149,21 @@ apt-get update
 
 # Install debian apps
 apt-get install -y \
-    rxvt-unicode-256color \
-    meld \
-    remmina \
-    firefox \
     filezilla \
-    pinta \
-    shutter \
+    firefox \
     gnome-control-center \
-    libreoffice \
     kazam \
+    libreoffice \
+    meld \
     peek \
+    pinta \
+    remmina \
+    rxvt-unicode-256color \
+    shutter \
+    snapd \
     wmctrl
-
-# Install snap apps
-snap install spotify
-snap install sublime-text --classic
-snap install skype --classic
-snap install slack --classic
-snap install phpstorm --classic
-snap install hugo --channel=extended
-snap install code --classic
-snap install node --classic --channel 9/stable
-snap install ripgrep --classic && snap alias ripgrep.rg rg
-snap install hub --classic
-snap install pocket-casts
 
 # Delete apt cache
 apt-get clean
-rm -r /var/crash/*
-rm -r /var/cache/*
+rm -rf /var/crash/*
+rm -rf /var/cache/*

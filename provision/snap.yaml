@@ -1,0 +1,81 @@
+snaps:
+  -
+    name: core
+    channel: stable
+    file: core_6350.snap
+  -
+    name: gtk-common-themes
+    channel: stable/ubuntu-18.04
+    file: gtk-common-themes_818.snap
+  -
+    name: gnome-3-26-1604
+    channel: stable/ubuntu-18.04
+    file: gnome-3-26-1604_74.snap
+  -
+    name: gnome-calculator
+    channel: stable/ubuntu-18.04
+    file: gnome-calculator_260.snap
+  -
+    name: gnome-characters
+    channel: stable/ubuntu-18.04
+    file: gnome-characters_139.snap
+  -
+    name: gnome-logs
+    channel: stable/ubuntu-18.04
+    file: gnome-logs_45.snap
+  -
+    name: gnome-system-monitor
+    channel: stable/ubuntu-18.04
+    file: gnome-system-monitor_57.snap
+  - 
+    name: spotify
+    channel: stable
+    file: spotify_36.snap
+  - 
+    name: sublime-text
+    channel: stable
+    file: sublime-text_58.snap
+    classic: true
+  - 
+    name: skype
+    channel: stable
+    file: skype_66.snap
+    classic: true
+  - 
+    name: slack
+    channel: stable
+    file: slack_15.snap
+    classic: true
+  - 
+    name: phpstorm
+    channel: stable
+    file: phpstorm_104.snap
+    classic: true
+  - 
+    name: hugo
+    channel: extended
+    file: hugo_4737.snap
+  - 
+    name: code
+    channel: stable
+    file: code_11.snap
+    classic: true
+  - 
+    name: node
+    channel: 9/stable
+    file: node_1407.snap
+    classic: true
+  - 
+    name: ripgrep
+    channel: stable
+    file: ripgrep_5.snap
+    classic: true
+  - 
+    name: hub
+    channel: stable
+    file: hub_20.snap
+    classic: true
+  - 
+    name: pocket-casts
+    channel: stable
+    file: pocket-casts_4.snap
