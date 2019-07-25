@@ -162,8 +162,3 @@ apt-get install -y \
     shutter \
     snapd \
     wmctrl
-
-# Delete apt cache
-apt-get clean
-rm -rf /var/crash/*
-rm -rf /var/cache/*
