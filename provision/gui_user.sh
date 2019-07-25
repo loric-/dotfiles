@@ -12,3 +12,6 @@ fi
 
 # Set double click in file explorer
 gsettings set io.elementary.files.preferences single-click false
+
+# Apply colors
+xrdb $HOME/.Xresources
