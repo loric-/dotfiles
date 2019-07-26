@@ -15,3 +15,6 @@ gsettings set io.elementary.files.preferences single-click false
 
 # Apply colors
 xrdb $HOME/.Xresources
+
+# Fix gdm to load Xresources
+sudo sed -i 's/xrdb -nocpp -merge "$userresources"/xrdb -merge "$userresources"/' /etc/gdm3/Xsession
