@@ -18,38 +18,21 @@ Graphical and terminal application configurations are split in two different fol
 
 ## Install script
 
-A python 3 script has been created to easily symlink files.
-
-    python3 link.py
+    make link
 
 ## Docker
 
 A Dockerfile is implemented to build an environment with only terminal based applications.
 
+    # build
     make docker
+
+    # run
     docker run --rm -ti --name dotfiles -e TERM=$TERM -v $(pwd):/home/dev/Lab lobre/dotfiles
 
 ## Generate ISO
 
     make iso
-
-## Packer
-
-Packer can be used to generate a VM of an Ubuntu 18.04 box with all the graphical and terminal tools installed.
-
-It can build boxes both for VMware Player and Virtualbox. Here are the dependencies.
- - packer: https://www.packer.io/downloads.html
- - virtualbox: https://www.virtualbox.org/manual/ch02.html
- - vmware tools: see https://github.com/lobre/docker-packer-vmware
-
-You can build and provision the box as follows.
-
-    packer build -only=vmware-iso packer/template.json
-    packer build -only=virtualbox-iso packer/template.json
-
-It takes around 30 min to provision the whole box.
-
-Then, the package control for sublime text has to be manually installed. `lxappearance` can help changing the gtk theme and `nitrogen` can be used for setting a wallpaper.
 
 ## Shortcut reference table
 
@@ -88,7 +71,3 @@ The configuration of `vscode` is saved in this repo but the list of extensions d
     code --list-extensions | xargs -L 1 echo code --install-extension >| graphical/.config/Code/extensions.sh
 
 This script can then be used to restore and install extensions.
-
-## Todo
-
-*Nothing up so far*

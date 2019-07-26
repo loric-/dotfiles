@@ -150,10 +150,8 @@ apt-get update
 # Install debian apps
 apt-get install -y \
     filezilla \
-    firefox \
     gnome-control-center \
     kazam \
-    libreoffice \
     meld \
     peek \
     pinta \

@@ -36,8 +36,10 @@ d-i finish-install/reboot_in_progress note
 
 # Custom Commands
 ubiquity ubiquity/success_command string \
-  cp -a /cdrom/scripts/ /target/home/dev/isoscripts; \
-  in-target chown -R dev.dev /home/dev/isoscripts; \
-  in-target chmod 755 /home/dev/isoscripts; \
-  in-target chmod +x /home/dev/isoscripts/test.sh; \
-  in-target sudo -u dev /home/dev/isoscripts/test.sh;
+  cp -a /cdrom/provision/ /target/home/dev/provision; \
+  in-target chown -R dev.dev /home/dev/provision; \
+  in-target chmod 755 /home/dev/provision; \
+  in-target chmod +x /home/dev/provision/term_user.sh /home/dev/provision/gui_user.sh; \
+  in-target sudo -u dev /home/dev/provision/term_user.sh; \
+  in-target sudo -u dev /home/dev/provision/gui_user.sh; \
+  in-target rm -rf /home/dev/provision;

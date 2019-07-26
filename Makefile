@@ -9,11 +9,12 @@ iso:
 	docker run -it --rm --privileged -v $$(pwd):/root/workdir lobre/isobuilder \
         -p "iso/ks.preseed" \
         -p "iso/isolinux/txt.cfg:isolinux/txt.cfg" \
-        -p "iso/scripts" \
+		-p "provision" \
         -s "provision/term_root.sh" \
         -s "provision/gui_root.sh" \
         -f "provision/snap.yaml:/var/lib/snapd/seed/seed.yaml" \
         -s "provision/preseed_snap.sh" \
+        -s "provision/clean.sh" \
         -- $(ISO)
 	@[ -f output.iso ] && sudo chown 1000.1000 output.iso
 

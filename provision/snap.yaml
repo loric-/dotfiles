@@ -47,15 +47,6 @@ snaps:
     file: slack_15.snap
     classic: true
   - 
-    name: phpstorm
-    channel: stable
-    file: phpstorm_104.snap
-    classic: true
-  - 
-    name: hugo
-    channel: extended
-    file: hugo_4737.snap
-  - 
     name: code
     channel: stable
     file: code_11.snap
@@ -69,11 +60,6 @@ snaps:
     name: ripgrep
     channel: stable
     file: ripgrep_5.snap
-    classic: true
-  - 
-    name: hub
-    channel: stable
-    file: hub_20.snap
     classic: true
   - 
     name: pocket-casts

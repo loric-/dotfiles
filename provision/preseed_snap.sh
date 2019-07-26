@@ -10,12 +10,9 @@ snap download spotify
 snap download sublime-text
 snap download skype
 snap download slack
-snap download phpstorm
-snap download hugo --channel extended
 snap download code
 snap download node --channel 9/stable
 snap download ripgrep
-snap download hub
 snap download pocket-casts
 
 # Move assert to correct folder
