@@ -2,6 +2,9 @@
 #
 # should be run as user (with sudo capabilities)
 
+# Set default shell
+sudo chsh -s /bin/zsh $USER
+
 # Add current user to docker group
 sudo usermod -aG docker $USER
 
