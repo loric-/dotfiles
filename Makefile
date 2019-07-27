@@ -15,8 +15,9 @@ iso:
         -f "provision/snap.yaml:/var/lib/snapd/seed/seed.yaml" \
         -s "provision/preseed_snap.sh" \
         -s "provision/clean.sh" \
+		-o "lobre.iso" \
         -- $(ISO)
-	@[ -f output.iso ] && sudo chown 1000.1000 output.iso
+	@[ -f lobre.iso ] && sudo chown 1000.1000 lobre.iso
 
 .PHONY: docker
 docker:
