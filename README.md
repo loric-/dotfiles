@@ -36,6 +36,7 @@ A Dockerfile is implemented to build an environment with only terminal based app
 
 ## Generate ISO
 
+    # make sure to have at least 10gb available on disk
     make iso
 
 ## Shortcut reference table
