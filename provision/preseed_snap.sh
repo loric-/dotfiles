@@ -3,6 +3,8 @@
 # Downloads snap packages locally to be installed during preseed.
 # Should be run as root.
 
+set -e
+
 cd /var/lib/snapd/seed/snaps
 
 # Download local snap packages

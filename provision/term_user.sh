@@ -2,6 +2,8 @@
 #
 # should be run as user (with sudo capabilities)
 
+set -e
+
 # Set default shell
 sudo chsh -s /bin/zsh $USER
 

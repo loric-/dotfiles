@@ -17,6 +17,8 @@ RUN usermod -aG docker dev
 
 # Define current user
 USER dev
+ENV HOME=/home/dev
+ENV USER=dev
 
 # Run user script
 RUN /tmp/term_user.sh
