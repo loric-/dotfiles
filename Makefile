@@ -25,3 +25,7 @@ docker:
 .PHONY: link
 link:
 	python3 link.py
+
+.PHONY: term-link
+term-link:
+	python3 link.py --only-terminal

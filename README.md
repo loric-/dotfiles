@@ -18,7 +18,11 @@ Graphical and terminal application configurations are split in two different fol
 
 ## Install script
 
+    # with gui bindings
     make link
+    
+    # only terminal binding
+    make term-link
 
 ## Docker
 
