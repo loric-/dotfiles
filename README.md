@@ -36,7 +36,16 @@ A Dockerfile is implemented to build an environment with only terminal based app
 
 ## Generate ISO
 
-    # make sure to have at least 10gb available on disk
+There is a script to generate an ISO bootable version with Ubuntu 18.04 desktop, all software
+pre-baked and with configurations already set up. It runs from withing a Docker container.
+
+In order to be able to launch it, you need to fit the requirements:
+ - make sure to have at least 10gb available on disk (`/var` partition)
+ - you should be running it from an Ubuntu 18 system (same as the one being generated)
+
+It can take up to half an hour to generate. You can them burn this ISO onto a bootable
+USB key or use it with a virtualization software.
+
     make iso
 
 ## Shortcut reference table
