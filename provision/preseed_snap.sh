@@ -5,7 +5,7 @@
 
 set -e
 
-cd /var/lib/snapd/seed/snaps
+cd /tmp/
 
 # Download local snap packages
 snap download spotify
@@ -23,6 +23,8 @@ for f in *.{assert,snap}; do
     mv "$f" "$renamed"
 done
 
-# Move assert to correct folder
-cd /var/lib/snapd/seed/assertions
-mv /var/lib/snapd/seed/snaps/*.assert .
+# Move snaps to correct folder
+mv /tmp/*.snap /var/lib/snapd/seed/snaps/
+
+# Move asserts to correct folder
+mv /tmp/*.assert /var/lib/snapd/seed/assertions/
