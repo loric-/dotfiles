@@ -30,38 +30,38 @@ snaps:
   - 
     name: spotify
     channel: stable
-    file: spotify_36.snap
+    file: spotify.snap
   - 
     name: sublime-text
     channel: stable
-    file: sublime-text_58.snap
+    file: sublime-text.snap
     classic: true
   - 
     name: skype
     channel: stable
-    file: skype_66.snap
+    file: skype.snap
     classic: true
   - 
     name: slack
     channel: stable
-    file: slack_15.snap
+    file: slack.snap
     classic: true
   - 
     name: code
     channel: stable
-    file: code_11.snap
+    file: code.snap
     classic: true
   - 
     name: node
     channel: 9/stable
-    file: node_1407.snap
+    file: node.snap
     classic: true
   - 
     name: ripgrep
     channel: stable
-    file: ripgrep_5.snap
+    file: ripgrep.snap
     classic: true
   - 
     name: pocket-casts
     channel: stable
-    file: pocket-casts_4.snap
+    file: pocket-casts.snap
