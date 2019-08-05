@@ -45,7 +45,6 @@ apt-get update \
       python3 \
       python3-pip \
       ranger \
-      software-properties-common \
       ssh \
       stress \
       sudo \
