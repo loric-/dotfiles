@@ -12,7 +12,7 @@ iso:
 		-p "provision" \
         -s "provision/term_root.sh" \
         -s "provision/gui_root.sh" \
-        -f "provision/snap.yaml:/var/lib/snapd/seed/seed.yaml" \
+        -f "provision/files/snap.yaml:/var/lib/snapd/seed/seed.yaml" \
         -s "provision/preseed_snap.sh" \
         -s "provision/clean.sh" \
 		-o "lobre.iso" \
