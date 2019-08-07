@@ -18,8 +18,6 @@ set scrolloff=3    " 3 lines displayed around cursor for scroll
 " No delay when exiting visual mode
 set timeoutlen=1000 ttimeoutlen=0
 
-" Special chars
-set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 
 set ignorecase     " Case insensitive
