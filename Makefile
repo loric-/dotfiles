@@ -8,12 +8,11 @@ default:
 iso:
 	output="lobre-$$(date +'%Y%m%d%H%M').iso"
 	docker run -it --rm --privileged -v $$(pwd):/root/workdir lobre/isobuilder \
-        -p "iso/ks.preseed" \
-        -p "iso/isolinux/txt.cfg:isolinux/txt.cfg" \
-		-p "provision" \
+        -p "iso/" \
+		-p "provision/" \
+        -f "provision/files/" \
         -s "provision/term_root.sh" \
         -s "provision/gui_root.sh" \
-        -f "provision/files/snap.yaml:/var/lib/snapd/seed/seed.yaml" \
         -s "provision/preseed_snap.sh" \
         -s "provision/clean.sh" \
 		-o "$$output" \
