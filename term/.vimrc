@@ -18,7 +18,7 @@ set scrolloff=3    " 3 lines displayed around cursor for scroll
 " No delay when exiting visual mode
 set timeoutlen=1000 ttimeoutlen=0
 
-set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set listchars=tab:>-,nbsp:.,trail:.,extends:>,precedes:<,eol:$
 
 set ignorecase     " Case insensitive
 set wildignorecase " Autocomplete case insensitive
