@@ -6,6 +6,7 @@ default:
 
 .PHONY: iso
 iso:
+	output="lobre-$$(date +'%Y%m%d%H%M').iso"
 	docker run -it --rm --privileged -v $$(pwd):/root/workdir lobre/isobuilder \
         -p "iso/ks.preseed" \
         -p "iso/isolinux/txt.cfg:isolinux/txt.cfg" \
@@ -15,9 +16,9 @@ iso:
         -f "provision/files/snap.yaml:/var/lib/snapd/seed/seed.yaml" \
         -s "provision/preseed_snap.sh" \
         -s "provision/clean.sh" \
-		-o "lobre.iso" \
+		-o "$$output" \
         -- $(ISO)
-	@[ -f lobre.iso ] && sudo chown 1000.1000 lobre.iso
+	@[ -f "$$output" ] && sudo chown 1000.1000 "$$output"
 
 .PHONY: docker
 docker:
