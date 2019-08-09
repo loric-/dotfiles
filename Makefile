@@ -6,8 +6,8 @@ default:
 
 .PHONY: iso
 iso:
-	output="lobre-$$(date +'%Y%m%d%H%M').iso"
-	docker run -it --rm --privileged -v $$(pwd):/root/workdir lobre/isobuilder \
+	output="lobre-$$(date +'%Y%m%d%H%M').iso" && \
+    docker run -it --rm --privileged -v $$(pwd):/root/workdir lobre/isobuilder \
         -p "iso/" \
         -p "provision/" \
         -f "provision/files/" \
@@ -16,8 +16,8 @@ iso:
         -s "provision/preseed_snap.sh" \
         -s "provision/clean.sh" \
         -o "$$output" \
-        -- $(ISO)
-	@[ -f "$$output" ] && sudo chown 1000.1000 "$$output"
+        -- $(ISO) && \
+    [ -f "$$output" ] && sudo chown 1000.1000 "$$output"
 
 .PHONY: docker
 docker:
