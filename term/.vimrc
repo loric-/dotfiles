@@ -27,8 +27,6 @@ set incsearch      " Highlight search result while inputing
 set hlsearch       " Highlight search results
 set wildmenu       " Show possible completions on command line
 set hidden         " Enable caching on buffer switch
-set copyindent     " Preserve space/tab combination from previous line
-set preserveindent " Preserve space/tab combination of current line when changing indent
 
 set background=dark
 
@@ -39,6 +37,9 @@ set noerrorbells   " Prevent bell
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set autoindent
+set copyindent
+set preserveindent
 
 " Split on the right
 set splitright
