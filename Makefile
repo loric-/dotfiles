@@ -9,13 +9,13 @@ iso:
 	output="lobre-$$(date +'%Y%m%d%H%M').iso"
 	docker run -it --rm --privileged -v $$(pwd):/root/workdir lobre/isobuilder \
         -p "iso/" \
-		-p "provision/" \
+        -p "provision/" \
         -f "provision/files/" \
         -s "provision/term_root.sh" \
         -s "provision/gui_root.sh" \
         -s "provision/preseed_snap.sh" \
         -s "provision/clean.sh" \
-		-o "$$output" \
+        -o "$$output" \
         -- $(ISO)
 	@[ -f "$$output" ] && sudo chown 1000.1000 "$$output"
 
