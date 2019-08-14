@@ -20,9 +20,11 @@ if [ $connected_outputs_count -eq 1 ]; then
 fi
 
 # Update additional displays
+previous=$internal
 for output in ${connected_outputs[@]}; do
     if [[ ! $output =~ ^$internal.*$ ]]; then
-       xrandr --output $output --pos 0x0 --auto --right-of $internal
+       xrandr --output $output --pos 0x0 --auto --right-of $previous
+       previous=$output
        notify-send "Monitor Update: $output plugged in"
     fi
 done
