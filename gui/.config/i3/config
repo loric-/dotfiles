@@ -195,7 +195,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
 # Custom programs
-exec --no-startup-id feh --randomize --bg-scale $HOME/Pictures/Wallpapers/*
+exec --no-startup-id $HOME/.config/i3/random_wallpaper.sh
 exec --no-startup-id xflux -l 46.251508
 exec --no-startup-id dunst -print \
     -lb "$base01" \
