@@ -37,6 +37,9 @@ connected_outputs_count=${#connected_outputs[@]}
 disconnected_outputs=$(xrandr | grep '\Wdisconnected' | awk '{ print $1 }')
 disconnected_outputs=($disconnected_outputs)
 
+# Get internal monitor (first monitor)
+internal=${connected_outputs[0]}
+
 # Turn off disconnected displays
 for output in ${disconnected_outputs[@]}; do
     xrandr --output $output --off
@@ -45,12 +48,10 @@ done
 # Turn off connected displays to reset them
 # before enabling them again
 for output in ${connected_outputs[@]}; do
-    xrandr --output $output --off
+    if [[ ! $output =~ ^$internal.*$ ]]; then
+        xrandr --output $output --off
+    fi
 done
-
-# Get internal monitor (first monitor)
-internal=${connected_outputs[0]}
-only_internal=1
 
 # Update internal
 xrandrEnable $internal
