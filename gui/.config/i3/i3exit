@@ -2,10 +2,6 @@
 
 lock() {
     $HOME/.config/i3/lock.sh
-
-    # Turn screen off after 1 min
-    sleep 60
-    xset dpms force off
 }
 
 case "$1" in
