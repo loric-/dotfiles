@@ -33,18 +33,20 @@ function Bepo(enable)
         noremap <C-w>r <C-w>l
 
         " Remap terminal windows manipulations
-        tnoremap <C-w>C <C-w>H
-        tnoremap <C-w>T <C-W>J
-        tnoremap <C-w>S <C-W>K
-        tnoremap <C-w>R <C-w>L
+        if has("terminal")
+            tnoremap <C-w>C <C-w>H
+            tnoremap <C-w>T <C-W>J
+            tnoremap <C-w>S <C-W>K
+            tnoremap <C-w>R <C-w>L
 
-        tnoremap <C-w>t <C-w>j
-        tnoremap <C-w>s <C-w>k
-        tnoremap <C-w>c <C-w>h
-        tnoremap <C-w>r <C-w>l
+            tnoremap <C-w>t <C-w>j
+            tnoremap <C-w>s <C-w>k
+            tnoremap <C-w>c <C-w>h
+            tnoremap <C-w>r <C-w>l
 
-        tnoremap <C-w>- <C-w>s
-        tnoremap <C-w>/ <C-w>v
+            tnoremap <C-w>- <C-w>s
+            tnoremap <C-w>/ <C-w>v
+        endif
 
         " hjkl -> ctsr
         noremap c h
@@ -119,18 +121,20 @@ function Bepo(enable)
         unmap <C-w>-
         unmap <C-w>/
 
-        tunmap <C-w>C
-        tunmap <C-w>T
-        tunmap <C-w>S
-        tunmap <C-w>R
+        if has("terminal")
+            tunmap <C-w>C
+            tunmap <C-w>T
+            tunmap <C-w>S
+            tunmap <C-w>R
 
-        tunmap <C-w>t
-        tunmap <C-w>s
-        tunmap <C-w>c
-        tunmap <C-w>r
+            tunmap <C-w>t
+            tunmap <C-w>s
+            tunmap <C-w>c
+            tunmap <C-w>r
 
-        tunmap <C-w>-
-        tunmap <C-w>/
+            tunmap <C-w>-
+            tunmap <C-w>/
+        endif
 
         unmap c
         unmap r
