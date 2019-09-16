@@ -64,8 +64,8 @@ echo "%sudo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Install golang
 rm -rf /usr/local/go*
-wget https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz \
-    && tar -xvf go1.12.6.linux-amd64.tar.gz \
+wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz \
+    && tar -xvf go1.13.linux-amd64.tar.gz \
     && mv go /usr/local \
     && rm -f go*
 
