@@ -27,9 +27,6 @@ set hlsearch       " Highlight search results
 set wildmenu       " Show possible completions on command line
 set hidden         " Enable caching on buffer switch
 
-" Gutter only enabled when numbers
-set signcolumn=number
-
 set background=dark
 
 set novisualbell   " Prevent bell
