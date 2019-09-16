@@ -1,8 +1,7 @@
-"
-" General
-"
-
 set nocompatible
+set nobackup
+set nowritebackup
+set noswapfile
 
 " Explorer settings
 let g:netrw_liststyle=3
@@ -28,6 +27,9 @@ set hlsearch       " Highlight search results
 set wildmenu       " Show possible completions on command line
 set hidden         " Enable caching on buffer switch
 
+" Gutter only enabled when numbers
+set signcolumn=number
+
 set background=dark
 
 set novisualbell   " Prevent bell
@@ -37,9 +39,6 @@ set noerrorbells   " Prevent bell
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set autoindent
-set copyindent
-set preserveindent
 
 " Split on the right
 set splitright
@@ -49,6 +48,12 @@ set splitbelow
 filetype on
 filetype plugin on
 filetype indent on
+set autoindent
+set smartindent
+
+" Improve completion
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Disable syntax color
 syntax off
@@ -58,33 +63,27 @@ set backspace=indent,eol,start
 
 " Autoread file if changes
 set autoread
-set updatetime=1000
-
-"
-" Remaps
-"
+set updatetime=500
 
 " Save with sudo
 command! W w !sudo tee % > /dev/null
 
-"
-" Plugin configurations
-"
+" Reset some colors
+highlight SignColumn ctermbg=none
+highlight Error ctermbg=none ctermfg=red
+highlight Todo ctermbg=none ctermfg=red
+highlight Pmenu ctermbg=white
+highlight PmenuSel ctermbg=gray ctermfg=black
 
-let g:go_fmt_command = "goimports"
-let g:go_def_mapping_enabled = 0
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
+
+" govim
 if has("autocmd")
-    autocmd FileType go nmap <C-t> <Plug>(go-def)
-    autocmd FileType go nmap g<C-t> <Plug>(go-def-pop)
+    autocmd FileType go nnoremap <buffer> <silent> gd : <C-u>call GOVIMHover()<CR>
+    autocmd FileType go nnoremap <buffer> <silent> <C-t> :GOVIMGoToDef<cr>
+    autocmd FileType go nnoremap <buffer> <silent> g<C-t> :GOVIMGoToPrevDef<cr>
 endif
 
-"
-" Other
-"
-
-" Fundamental bepo mappings
+" Bepo mappings
 runtime settings/bepo.vim
 
 " Allow to add additional configuration without needing to commit

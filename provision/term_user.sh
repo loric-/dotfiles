@@ -26,7 +26,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf \
   && $HOME/.fzf/install --bin
 
 # Install vim-go
-git clone https://github.com/fatih/vim-go.git $HOME/.vim/pack/plugins/start/vim-go
+git clone https://github.com/govim/govim.git $HOME/.vim/pack/plugins/start/govim
 
 # Working dir
 if [ ! -d "$HOME/Lab" ]; then
