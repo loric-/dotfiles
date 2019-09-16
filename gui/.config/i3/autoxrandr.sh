@@ -70,3 +70,6 @@ i3-msg reload
 
 # Restart Polybar
 ~/.config/polybar/launch.sh
+
+# Reload keyboard
+setxkbmap fr -variant bepo -option caps:escape

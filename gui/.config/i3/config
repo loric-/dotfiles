@@ -174,13 +174,10 @@ exec --no-startup-id \
     i3-msg workspace 1 && i3-msg "rename workspace to $workspace1"
 
 # Set bépo keyboard
-exec --no-startup-id setxkbmap fr -variant bepo
+exec --no-startup-id setxkbmap fr -variant bepo -option caps:escape
 
 # Less with bépo bindings
 exec --no-startup-id lesskey
-
-# Remap keys
-exec_always --no-startup-id sleep 2 && xmodmap $HOME/.Xmodmap
 
 # Remove screensaver and turn off screen after 5 min
 exec --no-startup-id xset +dpms
@@ -326,6 +323,9 @@ bindsym $mod+b exec --no-startup-id $HOME/.config/i3/random_wallpaper.sh
 
 # reload monitors
 bindsym $mod+m exec --no-startup-id $HOME/.config/i3/autoxrandr.sh
+
+# reload keyboard
+bindsym $mod+shift+k exec --no-startup-id setxkbmap fr -variant bepo -option caps:escape
 
 # reload polybar
 bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/polybar/launch.sh
