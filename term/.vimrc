@@ -61,6 +61,9 @@ set backspace=indent,eol,start
 " Autoread file if changes
 set autoread
 set updatetime=500
+if has("autocmd")
+    autocmd CursorHold,CursorHoldI * checktime
+endif
 
 " Save with sudo
 command! W w !sudo tee % > /dev/null
