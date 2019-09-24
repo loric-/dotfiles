@@ -218,7 +218,7 @@ exec --no-startup-id greenclip daemon
 exec_always --no-startup-id compton -b
 
 # Alternating layout
-exec_always --no-startup-id $HOME/.config/i3/alternating_layouts.py
+exec_always --no-startup-id $HOME/.config/i3/alternating_layouts.py &> /tmp/alternating_layouts.log
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
