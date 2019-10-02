@@ -50,7 +50,6 @@ set smartindent
 
 " Improve completion
 set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Disable syntax color
 syntax off
