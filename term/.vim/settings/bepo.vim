@@ -23,8 +23,8 @@ function Bepo(enable)
 
         " Remap windows manipulations
         noremap <C-w>C <C-w>H
-        noremap <C-w>T <C-W>J
-        noremap <C-w>S <C-W>K
+        noremap <C-w>T <C-w>J
+        noremap <C-w>S <C-w>K
         noremap <C-w>R <C-w>L
 
         noremap <C-w>t <C-w>j
@@ -35,8 +35,8 @@ function Bepo(enable)
         " Remap terminal windows manipulations
         if has("terminal")
             tnoremap <C-w>C <C-w>H
-            tnoremap <C-w>T <C-W>J
-            tnoremap <C-w>S <C-W>K
+            tnoremap <C-w>T <C-w>J
+            tnoremap <C-w>S <C-w>K
             tnoremap <C-w>R <C-w>L
 
             tnoremap <C-w>t <C-w>j
