@@ -8,6 +8,10 @@ let g:netrw_liststyle=3
 let g:netrw_localrmdir='rm -r'
 
 set grepprg=grep\ -RIin\ --exclude=tags\ $*\ 2>/dev/null
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-ignore-vcs\ --glob\ '!tags'\ --no-heading\ $*\ 2>/dev/null
+    set grepformat=%f:%l:%c:%m
+endif
 
 set dir=/tmp
 set backupdir=/tmp
