@@ -58,8 +58,12 @@ set backspace=indent,eol,start
 " Autoread file if changes
 set autoread
 set updatetime=500
+
 if has("autocmd")
-    autocmd CursorHold,CursorHoldI * checktime
+    " Trigger autoread when files changes on disk
+    autocmd FocusGained, BufEnter, CursorHold, CursorHoldI * if mode() != 'c' | checktime | endif
+    autocmd FileChangedShellPost *
+      \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 endif
 
 " Save with sudo
@@ -71,7 +75,6 @@ highlight Error ctermbg=none ctermfg=red
 highlight Todo ctermbg=none ctermfg=red
 highlight Pmenu ctermbg=white
 highlight PmenuSel ctermbg=gray ctermfg=black
-
 
 " govim
 if has("autocmd")
