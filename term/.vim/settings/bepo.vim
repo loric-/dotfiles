@@ -32,6 +32,9 @@ function Bepo(enable)
         noremap <C-w>c <C-w>h
         noremap <C-w>r <C-w>l
 
+        noremap <C-w>- <C-w>s
+        noremap <C-w>/ <C-w>v
+
         " Remap terminal windows manipulations
         if has("terminal")
             tnoremap <C-w>C <C-w>H

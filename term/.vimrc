@@ -7,11 +7,18 @@ set noswapfile
 let g:netrw_liststyle=3
 let g:netrw_localrmdir='rm -r'
 
+" Search options
 set grepprg=grep\ -RIin\ --exclude=tags\ $*\ 2>/dev/null
+
+" Search with rg if available
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --no-ignore-vcs\ --glob\ '!tags'\ --no-heading\ $*\ 2>/dev/null
     set grepformat=%f:%l:%c:%m
 endif
+
+" Custom command to search silently and open quickfix
+command! -nargs=+ -complete=file Grep
+    \ execute 'silent grep! <args>' | redraw! | cwindow
 
 set dir=/tmp
 set backupdir=/tmp
