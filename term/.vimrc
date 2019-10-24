@@ -33,8 +33,11 @@ set listchars=tab:>-,nbsp:.,trail:.,extends:>,precedes:<,eol:$
 set ignorecase     " Case insensitive
 set wildignorecase " Autocomplete case insensitive
 set smartcase      " Enable case sensitivity if search contains upper letter
-set wildmenu       " Show possible completions on command line
 set hidden         " Enable caching on buffer switch
+
+" Autocompletion
+set wildmenu
+set wildmode=list:longest,full
 
 set background=dark
 
