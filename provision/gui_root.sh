@@ -137,12 +137,6 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 DEBIAN_FRONTEND=noninteractive dpkg -i google-chrome-stable_current_amd64.deb
 rm -rf google-chrome-stable*
 
-# Install pantheon-files
-add-apt-repository -y ppa:elementary-os/daily
-apt-get update
-apt-get install -y pantheon-files
-ln -sf /usr/bin/io.elementary.files /usr/bin/pantheon-files
-
 # Custom repos for apps
 add-apt-repository -y ppa:peek-developers/stable
 apt-get update
