@@ -48,6 +48,12 @@ USB key or use it with a virtualization software.
 
     make iso
 
+## Burn ISO on USB
+
+`ddrescue` can be used to create a live USB version of the ISO.
+
+    sudo ddrescue lobre.iso /dev/sdX --force -D
+
 ## Shortcut reference table
 
 Shortcuts tend to be consistent between apps. Here is a table listing a few of them.
