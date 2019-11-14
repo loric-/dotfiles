@@ -57,7 +57,7 @@ alias godocserver="godoc -http=:6060 -index -index_files=/tmp/goindex.db -analys
 alias sshh="sed -rn 's/^\s*Host\s+(.*)\s*/\1/ip' ~/.ssh/config"
 alias files="pantheon-files"
 alias code-ext="code --list-extensions | xargs -L 1 echo code --install-extension"
-alias rg="rg --no-ignore-vcs"
+alias rg="rg --no-ignore-vcs --smart-case"
 
 # htop instead of top
 if type "htop" > /dev/null 2>&1; then
