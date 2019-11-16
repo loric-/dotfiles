@@ -7,6 +7,9 @@ set noswapfile
 let g:netrw_liststyle=3
 let g:netrw_localrmdir='rm -r'
 
+" Set path
+set path=.,**
+
 " Search options
 set grepprg=grep\ -RIin\ --exclude=tags\ $*\ 2>/dev/null
 
