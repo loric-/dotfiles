@@ -72,33 +72,68 @@ syntax off
 " Common behavior for backspace
 set backspace=indent,eol,start
 
-" Autoread file if changes
-set autoread
-set updatetime=500
-
-if has("autocmd")
-    " Trigger autoread when files changes on disk
-    autocmd FocusGained, BufEnter, CursorHold, CursorHoldI * if mode() != 'c' | checktime | endif
-    autocmd FileChangedShellPost *
-      \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
-endif
-
 " Save with sudo
 command! W w !sudo tee % > /dev/null
 
-" Reset some colors
+" Reset to basic colors
 highlight SignColumn ctermbg=none
 highlight Error ctermbg=none ctermfg=red
 highlight Todo ctermbg=none ctermfg=red
 highlight Pmenu ctermbg=white
 highlight PmenuSel ctermbg=gray ctermfg=black
 
-" govim
-if has("autocmd")
-    autocmd FileType go nnoremap <buffer> <silent> gd : <C-u>call GOVIMHover()<CR>
-    autocmd FileType go nnoremap <buffer> <silent> <C-t> :GOVIMGoToDef<cr>
-    autocmd FileType go nnoremap <buffer> <silent> g<C-t> :GOVIMGoToPrevDef<cr>
-endif
+" Autoread file if changes
+set autoread
+set updatetime=500
+
+" Trigger autoread when files changes on disk
+augroup FileChanged
+    au!
+    autocmd FocusGained, BufEnter, CursorHold, CursorHoldI * if mode() != 'c' | checktime | endif
+    autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+augroup END
+
+augroup Lsp
+    au!
+
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'go-lang',
+        \ 'cmd': {server_info->['gopls']},
+        \ 'whitelist': ['go'],
+        \ })
+
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'intelephense',
+        \ 'cmd': {server_info->['intelephense', '--stdio']},
+        \ 'initialization_options': {'storagePath': expand('~/.intelephense-db')},
+        \ 'whitelist': ['php'],
+        \ })
+
+    autocmd FileType go,php setlocal omnifunc=lsp#complete
+    autocmd FileType go,php nmap <buffer> <C-t> <plug>(lsp-definition)
+    autocmd FileType go,php nmap <buffer> gd <plug>(lsp-hover)
+    autocmd FileType go,php nmap <buffer> gr <plug>(lsp-references)
+    autocmd FileType go,php nmap <buffer> <F2> <plug>(lsp-rename)
+
+    " Format on save
+    autocmd BufWritePre *.go
+        \  let s:save = winsaveview()
+        \| exe 'keepjumps %!goimports 2>/dev/null || cat /dev/stdin'
+        \| call lsp#ui#vim#document_format()
+        \| call winrestview(s:save)
+
+augroup END
+
+" Lsp variables
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_signs_enabled = 1
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_signs_warning = {'text': '‼'}
+let g:lsp_signs_hint = {'text' : '✓'}
+let g:lsp_signs_information = {'text' : 'ℹ'}
+let g:lsp_highlights_enabled = 0
+let g:lsp_textprop_enabled = 0
 
 " Bepo mappings
 runtime settings/bepo.vim
