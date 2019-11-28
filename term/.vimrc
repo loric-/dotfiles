@@ -72,6 +72,16 @@ syntax off
 " Common behavior for backspace
 set backspace=indent,eol,start
 
+" Save with sudo
+command! W w !sudo tee % > /dev/null
+
+" Reset some colors
+highlight SignColumn ctermbg=none
+highlight Error ctermbg=none ctermfg=red
+highlight Todo ctermbg=none ctermfg=red
+highlight Pmenu ctermbg=white
+highlight PmenuSel ctermbg=gray ctermfg=black
+
 " Autoread file if changes
 set autoread
 set updatetime=500
@@ -83,19 +93,11 @@ if has("autocmd")
       \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 endif
 
-" Save with sudo
-command! W w !sudo tee % > /dev/null
-
-" Reset some colors
-highlight SignColumn ctermbg=none
-highlight Error ctermbg=none ctermfg=red
-highlight Todo ctermbg=none ctermfg=red
-highlight Pmenu ctermbg=white
-highlight PmenuSel ctermbg=gray ctermfg=black
-
 " govim
 if has("autocmd")
-    autocmd FileType go nnoremap <buffer> <silent> gd : <C-u>call GOVIMHover()<CR>
+    autocmd FileType go nnoremap <buffer> <silent> gd :call GOVIMHover()<CR>
+    autocmd FileType go nnoremap <buffer> <silent> gr :GOVIMReferences<CR>
+    autocmd FileType go nnoremap <buffer> <silent> <F2> :GOVIMRename<CR>
     autocmd FileType go nnoremap <buffer> <silent> <C-t> :GOVIMGoToDef<cr>
     autocmd FileType go nnoremap <buffer> <silent> g<C-t> :GOVIMGoToPrevDef<cr>
 endif
