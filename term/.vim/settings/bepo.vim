@@ -1,8 +1,8 @@
 " Variable to hold the enable status
-let g:bepo = 0
+let g:is_enabled = 0
 
-function Bepo(enable)
-    let g:bepo = a:enable
+function s:set(enable)
+    let g:is_enabled = a:enable
 
     if a:enable
         " Use é and è
@@ -92,10 +92,6 @@ function Bepo(enable)
         nnoremap <C-t> g<C-]>
         nnoremap g<C-t> <C-t>
 
-        if has("autocmd")
-            " Ex file explorer
-            autocmd filetype netrw call ExBepo()
-        endif
     else
         unmap é
         unmap É
@@ -174,22 +170,32 @@ function Bepo(enable)
 
         nunmap <C-t>
         nunmap g<C-t>
+    endif
 
-        if has("autocmd")
-            autocmd! filetype netrw
-        endif
+    " Remap in netrw
+    if has("autocmd")
+        augroup Netrw
+            autocmd!
+            autocmd FileType netrw call s:netrw()
+        augroup END
     endif
 endfunction
 
 " Remap when in Ex file explorer
-function ExBepo()
-    noremap <buffer> t j
-    noremap <buffer> s k
-    noremap <buffer> k s
+function s:netrw()
+    if g:is_enabled == 0
+        nunmap <buffer> t
+        nunmap <buffer> s
+        nunmap <buffer> k
+     else
+        nnoremap <buffer> k s
+        nnoremap <buffer> t j
+        nnoremap <buffer> s k
+    endif
 endfunction
 
-function ToggleBepo()
-    if g:bepo == 0 
+function s:toggle()
+    if g:is_enabled == 0 
         call Bepo(1)
         echo "Bepo has been enabled"
     else
@@ -198,13 +204,19 @@ function ToggleBepo()
     endif
 endfunction
 
-function BepoStatus()
-    if g:bepo == 0 
+function s:status()
+    if g:is_enabled == 0 
         echo "Bepo is disabled"
     else
         echo "Bepo is enabled"
     endif
 endfunction
 
+" Create commands
+command BepoStatus :call s:status()
+command BepoToggle :call s:toggle()
+command BepoEnable :call s:set(1)
+command BepoDisable :call s:set(0)
+
 " Activate bepo by default
-call Bepo(1)
+call s:set(1)
