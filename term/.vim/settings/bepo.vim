@@ -1,6 +1,7 @@
 " Variable to hold the enable status
 let g:is_enabled = 0
 
+" Function to enable or disable bepo mappings
 function s:set(enable)
     let g:is_enabled = a:enable
 
@@ -186,14 +187,13 @@ function s:netrw()
     if g:is_enabled == 0
         nunmap <buffer> t
         nunmap <buffer> s
-        nunmap <buffer> k
      else
         nnoremap <buffer> k s
         nnoremap <buffer> t j
-        nnoremap <buffer> s k
     endif
 endfunction
 
+" Toggle the activation of bepo mappings
 function s:toggle()
     if g:is_enabled == 0 
         call Bepo(1)
@@ -204,6 +204,7 @@ function s:toggle()
     endif
 endfunction
 
+" Display whether bepo mode is activated
 function s:status()
     if g:is_enabled == 0 
         echo "Bepo is disabled"
@@ -213,10 +214,10 @@ function s:status()
 endfunction
 
 " Create commands
-command BepoStatus :call s:status()
-command BepoToggle :call s:toggle()
-command BepoEnable :call s:set(1)
-command BepoDisable :call s:set(0)
+command BepoStatus :call <SID>status()
+command BepoToggle :call <SID>toggle()
+command BepoEnable :call <SID>set(1)
+command BepoDisable :call <SID>set(0)
 
 " Activate bepo by default
-call s:set(1)
+call <SID>set(1)
