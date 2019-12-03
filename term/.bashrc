@@ -24,7 +24,6 @@ export GOROOT=/usr/local/go
 export GOPATH="$LAB/go"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-
 # Common alias
 alias ll="ls -lh"
 alias l="ll"
@@ -407,3 +406,8 @@ function phplint() {
         done
     done
 }
+
+# Source Nix if installed
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then 
+    source $HOME/.nix-profile/etc/profile.d/nix.sh;
+fi
