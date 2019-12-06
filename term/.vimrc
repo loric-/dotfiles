@@ -8,11 +8,11 @@ let g:netrw_liststyle=3
 let g:netrw_localrmdir='rm -r'
 
 " Search options
-set grepprg=grep\ -RIin\ --exclude=tags\ $*\ 2>/dev/null
+let &grepprg="grep -RIin --exclude=tags $* 2>/dev/null"
 
 " Search with rg if available
 if executable('rg')
-    set grepprg=rg\ --vimgrep\ --smart-case\ --no-ignore-vcs\ --glob\ '!tags'\ --no-heading\ $*\ 2>/dev/null
+    let &grepprg="rg --vimgrep --smart-case --no-ignore-vcs --glob '!tags' --no-heading $* 2>/dev/null"
     set grepformat=%f:%l:%c:%m
 endif
 
