@@ -113,6 +113,7 @@ set $workspace8 "0:J"
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse
 for_window [class="(?i)peek"] floating enable
 for_window [class="URxvt" instance="floating"] floating enable
+for_window [title="Microsoft Teams Notification"] floating enable
 
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default
