@@ -16,10 +16,6 @@ if executable('rg')
     set grepformat=%f:%l:%c:%m
 endif
 
-" Custom command to search silently and open quickfix
-command! -nargs=+ -complete=file Grep
-    \ execute 'silent grep! <args>' | redraw! | cwindow
-
 set dir=/tmp
 set backupdir=/tmp
 
