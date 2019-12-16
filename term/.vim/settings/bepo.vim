@@ -185,11 +185,11 @@ endfunction
 " Remap when in Ex file explorer
 function s:netrw()
     if g:is_enabled == 0
+        nunmap <buffer> k
         nunmap <buffer> t
-        nunmap <buffer> s
      else
-        nnoremap <buffer> k s
         nnoremap <buffer> t j
+        nnoremap <buffer> s k
     endif
 endfunction
 
